@@ -25,6 +25,12 @@ randomise()
 global.plant_registry = ds_map_create();
 cards_init()
 
+/// @description Stove code
+global.mod_engine.init_card()
+
+///
+
+
 global.player_name = "Player";
 global.player_sprite = noone;
 
