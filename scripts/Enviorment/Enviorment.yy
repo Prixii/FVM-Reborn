@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Enviorment",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Enviorment",
+  "parent":{
+    "name":"GMLua",
+    "path":"folders/ModSupport/GMLua.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

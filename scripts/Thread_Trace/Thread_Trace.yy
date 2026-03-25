@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Thread_Trace",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Thread_Trace",
+  "parent":{
+    "name":"GMLua",
+    "path":"folders/ModSupport/GMLua.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

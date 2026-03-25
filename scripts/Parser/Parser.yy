@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Parser",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Parser",
+  "parent":{
+    "name":"GMLua",
+    "path":"folders/ModSupport/GMLua.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

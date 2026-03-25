@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Token",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Token",
+  "parent":{
+    "name":"GMLua",
+    "path":"folders/ModSupport/GMLua.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
