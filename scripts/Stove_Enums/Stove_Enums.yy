@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Stove_Enums",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Stove_Enums",
+  "parent":{
+    "name":"Stove",
+    "path":"folders/ModSupport/Stove.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
