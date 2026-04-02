@@ -1,0 +1,30 @@
+{
+    "$schema": "https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json",
+    "runtime": {
+        "version": "Lua 5.4",
+        "path": [
+            "?.lua",
+            "/?/init.lua"
+        ]
+    },
+    "workspace": {
+        "checkThirdParty": false,
+        "library": [
+            "../sdk/sdk_main"
+        ],
+        "ignoreDir": [
+            ".vscode"
+        ]
+    },
+    "diagnostics": {
+        "globals": [
+            "SDK"
+        ],
+        "disable": [
+            "lowercase-global"
+        ]
+    },
+    "completion": {
+        "displayContext": 1
+    }
+}

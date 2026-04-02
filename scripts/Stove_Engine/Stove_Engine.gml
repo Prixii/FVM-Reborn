@@ -8,6 +8,7 @@ function LuaFunc () constructor {
 global.stove_system = {
     spatial_registry: new SpatialRegistry(),
     sprite_manager: new ModSpriteManager(),
+    factory: new StoveFactory()
 }
 
 global.mod_engine = {

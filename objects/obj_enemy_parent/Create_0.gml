@@ -4,7 +4,7 @@ image_speed = 0
 atk = 10 //每次攻击伤害
 atk_cycle = 0.6 * 60 //攻击间隔
 move_speed = 0.32 //移动速度（像素/秒）
-hp = 100
+self.hp = 100
 maxhp = 100
 hurt_rate = 0.5 //切换至受伤状态所需生命值比例
 state = ENEMY_STATE.NORMAL //状态
@@ -34,7 +34,7 @@ stun_timer = 0
 stun_sprite = spr_mouse_stun
 mouse_id = ""
 giant_type = false
-target_type = "normal"
+self.target_type = "normal"
 is_boss = false
 can_dropped = false
 

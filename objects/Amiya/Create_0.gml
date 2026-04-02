@@ -50,8 +50,8 @@ self.bullets = []
 // self.kinematic = new StraitKinematic(8, 0)
 self.kinematic = new OrbitKinematic(150, -0.03)
 shoot = function() {
-    /// @type {Asset.GMObject.Stove_Bullet} 
-    var _bullet = instance_create_depth(x + 20, y - 75, depth - 500, Stove_Bullet)
+    /// @type {Asset.GMObject.Stove_DamageMedia} 
+    var _bullet = instance_create_depth(x + 20, y - 75, depth - 500, Stove_DamageMedia)
     _bullet.init(self.kinematic, self.atk, "normal", "normal", spr_sausage_bullet)
     array_push(self.bullets, _bullet)
 }

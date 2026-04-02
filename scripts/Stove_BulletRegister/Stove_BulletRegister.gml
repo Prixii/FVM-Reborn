@@ -34,6 +34,7 @@ function StraitKinematic(_velocity_x, _velocity_y): Kinematic(KINEMATIC_TYPE.STR
     }
 }
 
+// TODO instrumental variable rad_per_frame
 /// @param {Real} _radius 半径
 /// @param {Real} _angular_velocity 角速度（弧度/帧）
 function OrbitKinematic(_radius, _angular_velocity) : Kinematic(KINEMATIC_TYPE.ORBIT) constructor {

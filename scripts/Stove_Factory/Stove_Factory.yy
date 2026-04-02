@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Stove_Factory",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Stove_Factory",
+  "parent":{
+    "name":"Stove",
+    "path":"folders/ModSupport/Stove.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
