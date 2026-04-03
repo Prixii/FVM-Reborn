@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"Stove_Factory",
   "parent":{
-    "name":"Stove",
-    "path":"folders/ModSupport/Stove.yy",
+    "name":"Utils",
+    "path":"folders/ModSupport/Stove/Utils.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

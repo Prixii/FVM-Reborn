@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"Stove_SpatialRegistry",
   "parent":{
-    "name":"Stove",
-    "path":"folders/ModSupport/Stove.yy",
+    "name":"SpatialRegistry",
+    "path":"folders/ModSupport/Stove/SpatialRegistry.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

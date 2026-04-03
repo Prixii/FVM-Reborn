@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"Stove_SpriteSheet",
   "parent":{
-    "name":"Stove",
-    "path":"folders/ModSupport/Stove.yy",
+    "name":"SpriteManager",
+    "path":"folders/ModSupport/Stove/SpriteManager.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -11,8 +11,8 @@
   "name":"Stove_DamageMedia",
   "overriddenProperties":[],
   "parent":{
-    "name":"Stove",
-    "path":"folders/ModSupport/Stove.yy",
+    "name":"DmageSystem",
+    "path":"folders/ModSupport/Stove/DmageSystem.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"Stove_UnitTest",
   "parent":{
-    "name":"Stove",
-    "path":"folders/ModSupport/Stove.yy",
+    "name":"Test",
+    "path":"folders/ModSupport/Stove/Test.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

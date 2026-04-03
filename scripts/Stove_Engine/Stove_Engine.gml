@@ -24,28 +24,16 @@ global.mod_engine = {
         show_debug_message("engine init")
         setGMLVariable(self._mod_engine_scope, "mode_engine", self)
         
-        self._ast = createLuaFromFile("mods/test.lua", true)
-        runLua(self._ast, _mod_engine_scope)
-
-        // load sdk
-        self._sdk_ast = createLuaFromFile("sdk/sdk_main.lua", true)
-        runLua(self._sdk_ast, _mod_engine_scope , "logs")
-        
         // load mod
         var _mod_ast = createLuaFromFile("mods/mod.lua", false)
         runLua(_mod_ast, _mod_engine_scope)
-
-        self.luaFunc.onEvent = getLuaVariable(_mod_engine_scope, "OnEvent")
-        self.luaFunc.helloLua = getLuaVariable(_mod_engine_scope, "HelloLua")
+        var _test_ast = createLuaFromFile("mods/test.lua", false)
+        runLua(_test_ast, _mod_engine_scope)
 
         show_debug_message("Mod Engine Init Finished")
 
         var modMain = getLuaVariable(_mod_engine_scope, "ModMain")
         modMain()
-
-        var runFuncFromMod = getLuaVariable(_mod_engine_scope, "RunFuncFromMod")
-        runFuncFromMod();
-
 
         var skill_info = new SkillInfo("cost", array_create(kMaxLevel, 0))
         var sprite_sheet = new SpriteSheetInfo("mods/assets/amiya_idle.png", 11, 40, 85)
@@ -61,5 +49,3 @@ global.mod_engine = {
 }
 
 global.mod_engine.init();
-show_debug_message(typeof(global.mod_engine.luaFunc.onEvent));
-show_debug_message(typeof(global.mod_engine.luaFunc.helloLua));

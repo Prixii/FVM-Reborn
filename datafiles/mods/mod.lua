@@ -5,6 +5,6 @@ local function ModFunction()
 end
 
 function ModMain()
-    local myFuncId = ModSdk.RegisterFunction(ModFunction)
-    print("Registered function with ID: " .. myFuncId)
+    print("Here is Mod main")
+    Test.HelloLua()
 end

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"Stove_Typedef",
   "parent":{
-    "name":"Stove",
-    "path":"folders/ModSupport/Stove.yy",
+    "name":"Typedef",
+    "path":"folders/ModSupport/Stove/Typedef.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

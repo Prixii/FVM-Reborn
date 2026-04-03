@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"Stove_DamageMediaMetadata",
   "parent":{
-    "name":"Stove",
-    "path":"folders/ModSupport/Stove.yy",
+    "name":"DmageSystem",
+    "path":"folders/ModSupport/Stove/DmageSystem.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -11,8 +11,8 @@
   "name":"Stove_Food",
   "overriddenProperties":[],
   "parent":{
-    "name":"Stove",
-    "path":"folders/ModSupport/Stove.yy",
+    "name":"FoodManager",
+    "path":"folders/ModSupport/Stove/FoodManager.yy",
   },
   "parentObjectId":{
     "name":"obj_card_parent",
