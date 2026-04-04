@@ -181,8 +181,8 @@
   "swatchColours":null,
   "swfPrecision":0.5,
   "textureGroupId":{
-    "name":"Food",
-    "path":"texturegroups/Food",
+    "name":"player",
+    "path":"texturegroups/player",
   },
   "type":0,
   "VTile":false,

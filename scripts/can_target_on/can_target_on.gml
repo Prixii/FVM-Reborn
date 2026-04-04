@@ -19,6 +19,11 @@ function can_target_on(card_target_type,enemy_target_type){
 			return true
 		}
 	}
+	if enemy_target_type == "obstacle"{
+		if card_target_type == "pierce" || card_target_type == "normal"{
+			return true
+		}
+	}
 	return false
 }
 

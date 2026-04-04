@@ -7,7 +7,7 @@
 	var _range = 200;
 	var splash_ratio = 0.25
 	if shape >= 1{
-		splash_ratio = 0.35
+		splash_ratio = 0.5
 	}
 
 	with (obj_enemy_parent) {
