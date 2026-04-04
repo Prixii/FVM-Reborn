@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Stove_LuaManager",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Stove_LuaManager",
+  "parent":{
+    "name":"Utils",
+    "path":"folders/ModSupport/Stove/Utils.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

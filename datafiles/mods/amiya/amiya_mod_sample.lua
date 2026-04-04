@@ -84,3 +84,7 @@ function RegisterCard()
 
     GML_RegisterCard(_cardData)
 end
+
+function AmiyaMain()
+    print("Amiya mod loaded!")
+end

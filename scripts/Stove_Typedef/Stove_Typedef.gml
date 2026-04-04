@@ -48,7 +48,7 @@ function Result() constructor {
     self.message_stack = []
 
     /// @returns {Bool} 
-    static is_success = function() {
+    static is_succeed = function() {
         return self.code == 0
     }
 
@@ -60,7 +60,7 @@ function Result() constructor {
     /// @template {T}  
     /// @param {T|Undefined} _data 
     /// @returns {Struct.Result} 
-    static ok = function(_data = undefined) {
+    static success = function(_data = undefined) {
         var _result = new Result()
         _result.code = 0
         _result.data = _data

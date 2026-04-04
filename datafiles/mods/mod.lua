@@ -7,4 +7,5 @@ end
 function ModMain()
     print("Here is Mod main")
     Test.HelloLua()
+    return 1
 end

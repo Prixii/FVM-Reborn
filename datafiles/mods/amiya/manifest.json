@@ -1,0 +1,10 @@
+{
+  "name": "Amiya",
+  "id": "amiya_mod",
+  "version": "1.0.0",
+  "description": "Amiya character mod for Arknights",
+  "author": "Your Name",
+  "main_script": "amiya_mod_sample.lua",
+  "entry_function": "AmiyaMain",
+  "dispose_function": "AmiyaDispose"
+}

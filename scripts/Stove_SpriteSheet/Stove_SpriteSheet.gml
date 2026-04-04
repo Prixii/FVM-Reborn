@@ -29,7 +29,7 @@ function SpriteSheetInfo(_path, _frame_count) constructor {
     /// @returns {Struct.Result} 
     static load_sprite = function() {
         if (self.sprite_index != undefined && sprite_exists(self.sprite_index)) {
-            return new Result().ok()
+            return new Result().success()
         }
 
         var _sprite = sprite_add(self.path, self.frame_count, false, false, 0, 0)
@@ -46,7 +46,7 @@ function SpriteSheetInfo(_path, _frame_count) constructor {
         self.frame_width = self.texture_width / self.frame_count
         self.frame_height = self.texture_height
 
-        return new Result().ok()
+        return new Result().success()
     }
 
     static unload_sprite = function() {
@@ -112,7 +112,7 @@ function AnimationClip(_sprite_sheet_key, _start_frame, _frame_count) constructo
         self.frame_height = _layout.frame_h
         self._atlas_x = _layout.x
         self._atlas_y = _layout.y
-        return new Result().ok()
+        return new Result().success()
     }
         
     /// @param {Real} _frame  相对本 clip 的帧（0 .. frame_count-1）
@@ -216,7 +216,7 @@ function ModSpriteManager() constructor {
         sprite_delete(_temp_sprite)
 
         surface_key_to_id[$ _surface_key] = _new_surface
-        return new Result().ok(_new_surface)
+        return new Result().success(_new_surface)
     }
 
     /// @param {String} _sprite_sheet_info_key 
@@ -234,7 +234,7 @@ function ModSpriteManager() constructor {
                 STOVE_ERROR.NO_SUCH_RESOURCE, 
                 "Surface page missing or freed: " + _page_key)
         }
-        return new Result().ok(_page_key)
+        return new Result().success(_page_key)
     }
 
     /// @param {String} _sprite_sheet_info_key 
@@ -268,7 +268,7 @@ function ModSpriteManager() constructor {
         var _new_key = get_surface_key(surface_counter)
         surface_counter++
         surface_key_to_id[$ _new_key] = _new_id
-        return new Result().ok(_new_id)
+        return new Result().success(_new_id)
     }
 
     /// @returns {Struct.Result<Struct>}  data: { surface_key, surface_id }
@@ -285,7 +285,7 @@ function ModSpriteManager() constructor {
         surface_set_target(_sid)
         draw_clear_alpha(c_black, 0)
         surface_reset_target()
-        return new Result().ok({ surface_key: _key, surface_id: _sid })
+        return new Result().success({ surface_key: _key, surface_id: _sid })
     }
 
     /// @description 释放 request_sprite 生成的运行时 sprite（不释放 atlas surface）
@@ -391,7 +391,7 @@ function ModSpriteManager() constructor {
             pack_row_h = _strip_h
         }
 
-        return new Result().ok(pack_surface_id)
+        return new Result().success(pack_surface_id)
     }
 
     /// @description 烘焙完成后从 surface 生成可与 draw_self 配合的多帧 sprite；结果缓存在 sprite_pool。
@@ -451,7 +451,7 @@ function ModSpriteManager() constructor {
 
             _info.unload_sprite()
         }
-        return new Result().ok()
+        return new Result().success()
     }
 
 }

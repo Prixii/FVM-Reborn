@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"SpatialRegistryTest",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"SpatialRegistryTest",
+  "parent":{
+    "name":"Test",
+    "path":"folders/ModSupport/Stove/Test.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
