@@ -8,12 +8,15 @@ function lua_manager_test () {
 
     show_debug_message("Mod Engine Init Finished")
 
-    // var modMain = lua_manager.get_lua_variable("mods/mod.lua", "ModMain")
-    // var result = modMain()
-    // test_assert_equal(result, 1, "modMain should return 1");
     var result =  lua_manager.run_lua_function("mods/mod.lua", "ModMain")
     if (!result.is_succeed) {
         show_debug_message("ModMain failed: " + result.get_error_stack())
     }
-    test_assert_equal(result.is_succeed(), true, "modMain failed");
+    test_assert_equal(result.is_succeed(), true, "modMain should succeed");
+
+    var result =  lua_manager.run_lua_function("mods/mod.lua", "TestCustomGmlFunc")
+    if (!result.is_succeed) {
+        show_debug_message("TestCustomGmlFunc failed: " + result.get_error_stack())
+    }
+    test_assert_equal(result.is_succeed(), true, "TestCustomGmlFunc should succeed");
 }

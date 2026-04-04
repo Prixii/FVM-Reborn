@@ -1,12 +1,29 @@
 /// 
 
+
+function stove_global_test() {
+    show_debug_message("stove_global_test")
+    return 114
+}
+
+global.function_export_to_lua = {
+    "stove_global_test" : stove_global_test,
+};
+
 function Stove_LuaManager() constructor {
     self.mod_engine_scope = new Scope()
 
     self.ast_map = {}
     self.variable_map = {}
 
+    self.default_function_whitelist = [
+        "stove_global_test",
+        "irandom"
+    ]
+
     static init = function() {
+        show_debug_message("function index: " + string(asset_get_index("stove_global_test")));
+        setFunctionNameList(default_function_whitelist, true)
         setGMLVariable(self.mod_engine_scope, "stove_lua_scope", self)
     }
 

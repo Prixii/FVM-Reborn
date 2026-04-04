@@ -70,27 +70,13 @@ act_functions[CARD_STATE.ATTACK] = function() {
     act_attack()
 }
 
+/// @type {Struct.AnimationClip} 
+self.idle_anim_clip = undefined
+/// @type {Struct.AnimationClip} 
+self.attack_anim_clip = undefined
+self.current_anim_clip = undefined
 
-init = function(
-    _idle_sprite_info, _attack_sprite_info, _awake_sprite_info,
-    _attack_area, _attack_enemy_layers, _damage_media_metadatas
-    ) {
-    // sprite
-    idle_sprite = sprite_manager.request_sprite(_idle_sprite_info.key)
-    attack_sprite = sprite_manager.request_sprite(_attack_sprite_info.key)
-    awake_sprite = sprite_manager.request_sprite(_awake_sprite_info.key)
 
-    sprite_index = idle_sprite
-
-    // attack
-    var _grid_pos = get_grid_position_from_world(x, y);
-    attack_area_mask = _attack_area.calculate_attack_area_mask(_grid_pos.col, _grid_pos.row)
-    attack_enemy_layer_mask = global.stove_utils.enemy_layers_to_mask(_attack_enemy_layers)
-    damage_media_metadatas = _damage_media_metadatas
-
-    upgrade_data = get_plant_data_with_skill(plant_id, shape, current_level, skill);
-
-} 
 
 /// @returns {Bool} 
 should_exit = function() {
@@ -103,6 +89,23 @@ on_create = function() {
     self.origin_y = y
     self.spatial_registry = global.stove_system.spatial_registry
     self.stove_utils = global.stove_utils
+
+    var _meta_data = global.stove_system.food_manager.get_food_meta_data(plant_id)
+    if (is_undefined(_meta_data)) {
+        throw("Plant not found: " + plant_id); 
+    }
+
+    idle_anim_clip = _meta_data.idle_animation_clip
+    attack_anim_clip = _meta_data.attack_animation_clip
+    current_anim_clip = idle_anim_clip
+
+    // attack
+    var _grid_pos = get_grid_position_from_world(x, y);
+    attack_area_mask = _meta_data.attack_area.calculate_attack_area_mask(_grid_pos.col, _grid_pos.row)
+    attack_enemy_layer_mask = global.stove_utils.enemy_layers_to_mask(_meta_data.attack_layers)
+
+    upgrade_data = get_plant_data_with_skill(plant_id, shape, current_level, skill);
+
 }
 
 // ----------- STEP -------------
@@ -126,13 +129,13 @@ switch_state = function() {
 
     if (_attack_target_mask != 0) {
         if (state != CARD_STATE.ATTACK) {
-            sprite_index = attack_sprite
+            current_anim_clip = attack_anim_clip
 			image_index = 0
             state = CARD_STATE.ATTACK
         }
     } else {
         if (state != CARD_STATE.IDLE) {
-            sprite_index = idle_sprite
+            current_anim_clip = idle_anim_clip
 			image_index = 0
             state = CARD_STATE.IDLE
         }

@@ -1,39 +1,46 @@
 /// 
 
 
-/// @param {Struct.CardMetaData} _card_meta_data 
-function register_mod_card(_card_meta_data) {
+/// @param {Struct.FoodMetaData} _food_meta_data 
+function register_mod_food(_food_meta_data) {
     register_card(
-        _card_meta_data.id, 
-        Amiya, 
-        array_map(_card_meta_data.shaped_card_datas, function(_data, _) {
+        _food_meta_data.id, 
+        Stove_Food, 
+        array_map(_food_meta_data.shaped_card_datas, function(_data, _) {
             return _data.get_register_card_data();
         }))
     register_plant_lite(
-        _card_meta_data.id,
-        array_map(_card_meta_data.shaped_card_datas, function(_data,_) {
+        _food_meta_data.id,
+        array_map(_food_meta_data.shaped_card_datas, function(_data,_) {
             return _data.get_register_card_lite_data()
         }))
     register_card_skill(
-        _card_meta_data.id, 
-        _card_meta_data.skill_info.key, 
-        _card_meta_data.skill_info.data)
+        _food_meta_data.id, 
+        _food_meta_data.skill_info.key, 
+        _food_meta_data.skill_info.data)
     register_card_info_island(
-        _card_meta_data.id, 
-        _card_meta_data.info_island_description)
+        _food_meta_data.id, 
+        _food_meta_data.info_island_description)
 }
 
 /// @param {String} _id
 /// @param {Array<Struct.ShapedCardData>}   _shaped_card_datas
 /// @param {String}   _info_island_description
 /// @param {Struct.SkillInfo} _skill_info
-function CardMetaData(
+function FoodMetaData(
         _id, _shaped_card_datas, 
         _info_island_description, _skill_info) constructor {
     self.id = _id
     self.shaped_card_datas = _shaped_card_datas
     self.info_island_description = _info_island_description
     self.skill_info = _skill_info
+    self.idle_animation_clip = {}
+    self.attack_animation_clip = {}
+    /// @type {Struct.AttackArea} 
+    self.attack_area = new AttackArea(ATTACK_AREA_TYPE.CIRCULAR, [ENEMY_LAYER.ALL])
+    self.damage_media_metadatas = {}
+    self.attack_layers = {}
+    self.tags = {}
 }
 
 /// @param {String} _name 

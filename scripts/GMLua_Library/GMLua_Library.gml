@@ -62,7 +62,10 @@ with(global.LuaLibrary)
 			var curFuncIndex = builtInFuncs[$functionName];
 			if(is_undefined(curFuncIndex))
 			{
-				return undefined;
+				curFuncIndex = global.function_export_to_lua[$ functionName];
+				if (is_undefined(curFuncIndex)) {
+					return undefined;
+				}
 			}
 			return method(undefined,curFuncIndex)
 		}

@@ -260,7 +260,6 @@
   ],
   "ForcedPrefabProjectReferences":[],
   "IncludedFiles":[
-    {"$GMIncludedFile":"","%Name":"settings.json","CopyToMask":-1,"filePath":"datafiles/.vscode","name":"settings.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"abyss_hard.json","CopyToMask":-1,"filePath":"datafiles/level_data","name":"abyss_hard.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"abyss.json","CopyToMask":-1,"filePath":"datafiles/level_data","name":"abyss.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"champagne_island_land_hard.json","CopyToMask":-1,"filePath":"datafiles/level_data","name":"champagne_island_land_hard.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
@@ -356,6 +355,7 @@
     {"$GMIncludedFile":"","%Name":"mod.lua","CopyToMask":-1,"filePath":"datafiles/mods","name":"mod.lua","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"test.lua","CopyToMask":-1,"filePath":"datafiles/mods","name":"test.lua","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"DefaultSprite.png","CopyToMask":-1,"filePath":"datafiles/sdk","name":"DefaultSprite.png","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"Stove_LuaSdk.lua","CopyToMask":-1,"filePath":"datafiles/sdk","name":"Stove_LuaSdk.lua","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":".luarc.json","CopyToMask":-1,"filePath":"datafiles/StoveLua","name":".luarc.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"damage_media.lua","CopyToMask":-1,"filePath":"datafiles/StoveLua","name":"damage_media.lua","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"damage_source.lua","CopyToMask":-1,"filePath":"datafiles/StoveLua","name":"damage_source.lua","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
@@ -828,6 +828,7 @@
     {"id":{"name":"Stove_EventBus","path":"scripts/Stove_EventBus/Stove_EventBus.yy",},},
     {"id":{"name":"Stove_EventBusTypedef","path":"scripts/Stove_EventBusTypedef/Stove_EventBusTypedef.yy",},},
     {"id":{"name":"Stove_Factory","path":"scripts/Stove_Factory/Stove_Factory.yy",},},
+    {"id":{"name":"Stove_FoodManager","path":"scripts/Stove_FoodManager/Stove_FoodManager.yy",},},
     {"id":{"name":"Stove_LuaManager","path":"scripts/Stove_LuaManager/Stove_LuaManager.yy",},},
     {"id":{"name":"Stove_SpatialRegistry","path":"scripts/Stove_SpatialRegistry/Stove_SpatialRegistry.yy",},},
     {"id":{"name":"Stove_SpriteSheet","path":"scripts/Stove_SpriteSheet/Stove_SpriteSheet.yy",},},
