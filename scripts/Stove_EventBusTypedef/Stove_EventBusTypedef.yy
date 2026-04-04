@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Stove_EventBusTypedef",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Stove_EventBusTypedef",
+  "parent":{
+    "name":"EventBus",
+    "path":"folders/ModSupport/Stove/EventBus.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

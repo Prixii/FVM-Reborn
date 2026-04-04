@@ -721,6 +721,8 @@
     {"id":{"name":"Stove_DamageMediaMetadata","path":"scripts/Stove_DamageMediaMetadata/Stove_DamageMediaMetadata.yy",},},
     {"id":{"name":"Stove_Engine","path":"scripts/Stove_Engine/Stove_Engine.yy",},},
     {"id":{"name":"Stove_Enums","path":"scripts/Stove_Enums/Stove_Enums.yy",},},
+    {"id":{"name":"Stove_EventBus","path":"scripts/Stove_EventBus/Stove_EventBus.yy",},},
+    {"id":{"name":"Stove_EventBusTypedef","path":"scripts/Stove_EventBusTypedef/Stove_EventBusTypedef.yy",},},
     {"id":{"name":"Stove_Factory","path":"scripts/Stove_Factory/Stove_Factory.yy",},},
     {"id":{"name":"Stove_SpatialRegistry","path":"scripts/Stove_SpatialRegistry/Stove_SpatialRegistry.yy",},},
     {"id":{"name":"Stove_SpriteSheet","path":"scripts/Stove_SpriteSheet/Stove_SpriteSheet.yy",},},

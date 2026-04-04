@@ -47,7 +47,6 @@ self.spatial_registry = global.stove_system.spatial_registry
 
 self.max_bullet_count = 6
 self.bullets = []
-// self.kinematic = new StraitKinematic(8, 0)
 self.kinematic = new OrbitKinematic(150, -0.03)
 shoot = function() {
     /// @type {Asset.GMObject.Stove_DamageMedia} 

@@ -57,6 +57,8 @@ self.upgrade_data = {}
 self.spatial_registry = global.stove_system.spatial_registry
 self.sprite_manager = global.stove_system.sprite_manager
 
+/// @type {Array<String>} 
+self.tags = []
 self.attack_area_mask = 0
 self.attack_enemy_layer_mask = 0
 
@@ -64,9 +66,6 @@ self.attack_enemy_layer_mask = 0
 self.damage_media_metadatas = []
 
 self.act_functions = {}
-act_functions[CARD_STATE.IDLE ]=  function() {
-    act_idle()
-}
 act_functions[CARD_STATE.ATTACK] = function() {
     act_attack()
 }
