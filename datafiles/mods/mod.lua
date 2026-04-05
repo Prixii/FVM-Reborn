@@ -14,8 +14,8 @@ function ModMain()
 end
 
 function TestCustomGmlFunc()
-    func = getgmlfunction("stove_global_test")
-    if (type(func) == "GMFunction") then
+    local func = Stove.GetGmlFunction("stove_global_test")
+    if (func ~= nil) then
         local result = func()
         print("function result from gml:", result)
         return 1

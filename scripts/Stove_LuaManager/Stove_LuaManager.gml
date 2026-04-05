@@ -25,6 +25,8 @@ function Stove_LuaManager() constructor {
         show_debug_message("function index: " + string(asset_get_index("stove_global_test")));
         setFunctionNameList(default_function_whitelist, true)
         setGMLVariable(self.mod_engine_scope, "stove_lua_scope", self)
+
+        load_lua("sdk/stove_lua_sdk.lua")
     }
 
     /// @param {String} _path 
