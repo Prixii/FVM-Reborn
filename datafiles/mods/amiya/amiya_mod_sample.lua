@@ -2,8 +2,6 @@ function RegisterAmiyaMod()
     RegisterCard()
 end
 
-RegisterAmiyaMod()
-
 SECOND = 1
 
 function GML_RegisterCard(cardData)
@@ -13,43 +11,43 @@ end
 function RegisterCard()
     local _spriteSheet1 = {
         path = "mods/amiya_mod_texture_1.png",
-        frameCount = 20,
+        frameCount = 20
     }
     local _spriteSheet2 = {
         path = "mods/amiya_mod_texture_2.png",
-        frameCount = 4,
+        frameCount = 4
     }
 
     local _attackAnimation = {
         spriteSheet = _spriteSheet1,
         start_frame = 0,
-        end_frame = 8,
+        end_frame = 8
     }
 
     local _idleAnimation = {
         spriteSheet = _spriteSheet1,
         start_frame = 9,
-        end_frame = 20,
+        end_frame = 20
     }
 
 
     local _bulletAnimation = {
         spriteSheet = _spriteSheet2,
         start_frame = 0,
-        end_frame = 4,
+        end_frame = 4
     }
 
     local _bullet = {
         damage = {
             type = "single",
-            atk = 20,
+            atk = 20
         },
         animation = _bulletAnimation,
         kinematic = {
             speed = 5,
-            direction = "forward",
+            direction = "forward"
         },
-        tags = { "projectile", "magic" },
+        tags = { "projectile", "magic" }
     }
 
     local _skillInfo = {
@@ -67,7 +65,7 @@ function RegisterCard()
         attack_area = {
             type = "line",
             direction = "forward",
-            distance = 9,
+            distance = 9
         },
         defaultHp = 100,
         defaultCost = 325,
@@ -86,5 +84,5 @@ function RegisterCard()
 end
 
 function AmiyaMain()
-    print("Amiya mod loaded!")
+    print("Hello! Here is Amiya Mod!")
 end

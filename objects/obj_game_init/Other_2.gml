@@ -26,7 +26,7 @@ global.plant_registry = ds_map_create();
 cards_init()
 
 /// @description Stove code
-global.mod_engine.init_card()
+global.stove.engine.init_card()
 
 ///
 

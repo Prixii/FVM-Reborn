@@ -40,4 +40,5 @@ function Stove_ModManagerUtils() constructor {
         }
         return _json_result
     }
+
 }

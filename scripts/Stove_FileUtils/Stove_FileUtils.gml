@@ -22,6 +22,48 @@ function Stove_FileUtils() constructor {
         return _subfolders
     }
 
+    /// @description return full path of files with specific extension in the folder
+    /// @param {String} _path 
+    /// @param {String} _extension 
+    /// @returns {Array<String>} full path of files
+    static find_files_with_extension_recursively = function(_path, _extension) {
+        var _files = [];
+        
+        if (string_char_at(_path, string_length(_path)) != "/") {
+            _path += "/";
+        }
+
+        if (!directory_exists(_path)) return _files;
+
+        var _temp_list = [];
+        var _item = file_find_first(_path + "*.*", fa_directory | fa_archive | fa_readonly);
+        
+        while (_item != "") {
+            if (_item != "." && _item != "..") {
+                array_push(_temp_list, _item);
+            }
+            _item = file_find_next();
+        }
+        file_find_close(); 
+
+        var _count = array_length(_temp_list);
+        for (var i = 0; i < _count; i++) {
+            var _name = _temp_list[i];
+            var _full_path = _path + _name;
+
+            if (directory_exists(_full_path)) {
+                var _sub_results = self.find_files_with_extension_recursively(_full_path, _extension);
+                _files = array_concat(_files, _sub_results);
+            } else {
+                if (string_ends_with(_name, _extension)) {
+                    array_push(_files, _full_path);
+                }
+            }
+        }
+
+        return _files;
+    }
+
     /// @param {String} _path 
     /// @param {String} _data 
     static append_data_to_file = function(_path, _data) {

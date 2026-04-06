@@ -11,7 +11,7 @@
 /// @param {Real} _frame_count 
 function SpriteSheetInfo(_path, _frame_count) constructor {
     self.path = _path
-    self.key = string_replace_all(string_lower(_path), "\\", "/");
+    self.key = string_replace_all(string_lower(_path), "/", "/");
     
     self.frame_count = _frame_count
     /// @type {Real|Undefined} 

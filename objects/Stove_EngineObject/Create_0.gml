@@ -1,5 +1,6 @@
 /// 
 
-global.mod_engine.init();
+
+global.stove.engine.init();
 
 run_stove_test();

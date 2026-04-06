@@ -4,7 +4,7 @@ function Stove_Logger() constructor {
     self.log_file_path = undefined
     /// @param {String} _log_file_path 
     /// @returns {Struct.Result} 
-    static init = function(_log_file_path = "stove\\log") {
+    static init = function(_log_file_path = "stove/log") {
         self.log_file_path = _log_file_path
         return global.stove.file_utils.create_file_if_not_exist(_log_file_path)
     }

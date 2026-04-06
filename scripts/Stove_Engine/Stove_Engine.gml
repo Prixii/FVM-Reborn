@@ -1,30 +1,11 @@
 /// 
 
-function LuaFunc () constructor {
-    self.onEvent = undefined;
-    self.helloLua = undefined;
-} 
-
-global.stove = {
-    spatial_registry: new SpatialRegistry(),
-    sprite_manager: new ModSpriteManager(),
-    factory: new StoveFactory(),
-    event_bus: new StoveEventBus(),
-    lua_manager: new Stove_LuaManager(),
-    food_manager: new Stove_FoodManager(),
-    file_utils: new Stove_FileUtils(),
-    logger: new Stove_Logger(),
-}
-
-global.mod_engine = {
-    is_ready: false,
-    luaFunc: new LuaFunc(),
+function Stove_Engine() constructor {
+    self.is_ready = false
     /// @type {Struct.ASTChunk} 
-    _ast: undefined,
-    _sdk_ast: undefined,
-    mod_cards: [],
+    self.mod_cards = []
 
-    init: function() {
+    static init = function() {
         show_debug_message("engine init")
         
         var skill_info = new SkillInfo("cost", array_create(kMaxLevel, 0))
@@ -33,9 +14,9 @@ global.mod_engine = {
         var amiya = new FoodMetaData("amiya", [amiya_shape], "这是罗德岛尊贵的 CEO", skill_info)
 
         array_push(self.mod_cards, amiya)
-    },
+    }
 
-    init_card: function() {
+    static init_card = function() {
         array_foreach(self.mod_cards, function (_card, _) {register_mod_food(_card)})
     }
 }

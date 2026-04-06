@@ -833,6 +833,7 @@
     {"id":{"name":"Stove_Factory","path":"scripts/Stove_Factory/Stove_Factory.yy",},},
     {"id":{"name":"Stove_FileUtils","path":"scripts/Stove_FileUtils/Stove_FileUtils.yy",},},
     {"id":{"name":"Stove_FoodManager","path":"scripts/Stove_FoodManager/Stove_FoodManager.yy",},},
+    {"id":{"name":"Stove_Init","path":"scripts/Stove_Init/Stove_Init.yy",},},
     {"id":{"name":"Stove_Logger","path":"scripts/Stove_Logger/Stove_Logger.yy",},},
     {"id":{"name":"Stove_LuaManager","path":"scripts/Stove_LuaManager/Stove_LuaManager.yy",},},
     {"id":{"name":"Stove_ModManager","path":"scripts/Stove_ModManager/Stove_ModManager.yy",},},
