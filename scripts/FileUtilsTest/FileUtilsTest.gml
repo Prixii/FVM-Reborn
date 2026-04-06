@@ -13,8 +13,8 @@ function file_utils_test () {
 
     var logger = new Stove_Logger()
     logger.init(working_directory + "stove_logger.txt")
-    logger.log_e("error")
-    logger.log_w("warn")
-    logger.log_i("info")
-    logger.log_d("debug")
+    logger.log_e("Test error")
+    logger.log_w("Test warn")
+    logger.log_i("Test info")
+    logger.log_d("Test debug")
 }

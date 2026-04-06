@@ -28,10 +28,9 @@ function Stove_ModManagerUtils() constructor {
             return new Result().fail(STOVE_ERROR.NO_SUCH_FILE, "Mod manifest file not found: " + _path)
         }
         var _file = file_text_open_read(_path)
-        var _raw_json = ""
-        while (!file_text_eof(_file)) {
-            _raw_json += file_text_read_string(_file)
-        }
+        var _buffer = buffer_load(_path);
+	    var _raw_json = buffer_read(_buffer, buffer_string);
+	    buffer_delete(_buffer);
         var _json_result = self._parse_json(_raw_json)
         if (_json_result.is_failed) {
             return _json_result

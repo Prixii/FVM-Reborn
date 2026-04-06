@@ -30,7 +30,7 @@ function Stove_FileUtils() constructor {
             if (_file == -1) {
                 return new Result().fail(STOVE_ERROR.CREATE_FILE_FAILED, "Failed to create file: " + _path);
             }
-            file_text_write_string(_file, _data);
+            file_text_write_string(_file, _data + "\n");
             file_text_close(_file);
         } catch (e) {
             return new Result().fail(STOVE_ERROR.CREATE_FILE_FAILED, "Failed to create file: " + _path + "\n" + string(e));
