@@ -10,7 +10,9 @@ function test_assert_equal(_actual, _expected, _msg) {
 }
 
 function run_stove_test() {
+    show_debug_message("------------Stove Unit Test Start------------")
     lua_manager_test()
     file_utils_test()
     mod_manager_test()
+    show_debug_message("-------------Stove Unit Test End-------------")
 }

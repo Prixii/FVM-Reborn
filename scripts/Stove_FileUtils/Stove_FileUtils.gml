@@ -2,24 +2,24 @@
 function Stove_FileUtils() constructor {
     /// @param {String} _path 
     /// @returns {Array<String>} 
-    static find_subfolders = function(_path) {
-        var _subfolders = []
+    static find_sub_folders = function(_path) {
+        var _sub_folders = []
         if (!directory_exists(_path)) {
-            return _subfolders
+            return _sub_folders
         }
-        show_debug_message("Find subfolders at: " + _path);
+        show_debug_message("Find sub folders at: " + _path);
         var _folder_name = file_find_first(_path + "*", fa_directory)
         while (_folder_name != "") {
             if (directory_exists(_path + _folder_name)) {
                 if (_folder_name == "." || _folder_name == "..") {
                     continue
                 }
-                array_push(_subfolders, _path + _folder_name)
+                array_push(_sub_folders, _path + _folder_name)
             }
             _folder_name = file_find_next()
         }
         file_find_close()
-        return _subfolders
+        return _sub_folders
     }
 
     /// @description return full path of files with specific extension in the folder

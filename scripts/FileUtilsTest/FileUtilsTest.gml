@@ -5,10 +5,10 @@ function file_utils_test () {
     test_assert_equal(result.is_succeed(), true, "create_file_if_not_exist should succeed");
     result = file_util.append_data_to_file( working_directory + "test.txt", "test")
     test_assert_equal(result.is_succeed(), true, "append_data_to_file should succeed");
-    var _sub_folders = file_util.find_subfolders("mods/")
-    test_assert_equal(array_length(_sub_folders) > 0, true, "find_subfolders should return a list")
+    var _sub_folders = file_util.find_sub_folders("mods/")
+    test_assert_equal(array_length(_sub_folders) > 0, true, "find_sub_folders should return a list")
     for (var i = 0; i < array_length(_sub_folders); i++) {
-        show_debug_message(_sub_folders[i])
+        show_debug_message("\t" + _sub_folders[i])
     }
 
     var logger = new Stove_Logger()

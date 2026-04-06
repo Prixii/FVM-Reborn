@@ -77,12 +77,17 @@ function Stove_ModManager() constructor {
 
     /// @param {String} _mod_parent_folder 
     static register_all_mods = function(_mod_parent_folder) {
-        var _mod_foders = self.file_utils.find_subfolders(_mod_parent_folder)
-        for (var i = 0; i < array_length(_mod_foders); i++) {
-            var _register_mod_result = self._register_mod(_mod_foders[i])
+        var _mod_folders = self.file_utils.find_sub_folders(_mod_parent_folder)
+        for (var i = 0; i < array_length(_mod_folders); i++) {
+            var _register_mod_result = self._register_mod(_mod_folders[i])
             if (_register_mod_result.is_failed()) {
-                return _register_mod_result
+                if (_register_mod_result.code == STOVE_ERROR.NO_SUCH_FILE) {
+                    logger.log_w("No manifest.json in folder:[" + _mod_folders[i] + "] probably not a mod folder")
+                } else {
+                    return _register_mod_result
+                }
             } else {
+                logger.log_d("Registered mod: " + _mod_folders[i])
                 array_push(self.mod_keys, _register_mod_result.data)
             }
         }
