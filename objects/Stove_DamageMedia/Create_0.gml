@@ -27,7 +27,7 @@ update_grid_id = function() {
 on_create = function() {
     self.origin_x = x
     self.origin_y = y
-    self.spatial_registry = global.stove_system.spatial_registry
+    self.spatial_registry = global.stove.spatial_registry
     self.stove_utils = global.stove_utils
 }
 

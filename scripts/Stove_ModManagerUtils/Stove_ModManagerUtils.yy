@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"Utils",
+  "%Name":"Stove_ModManagerUtils",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"Utils",
+  "name":"Stove_ModManagerUtils",
   "parent":{
     "name":"ModManager",
     "path":"folders/ModSupport/Stove/ModManager.yy",

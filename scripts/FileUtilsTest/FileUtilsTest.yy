@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"FileUtilsTest",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"FileUtilsTest",
+  "parent":{
+    "name":"Test",
+    "path":"folders/ModSupport/Stove/Test.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"Typedef",
+  "%Name":"Stove_FileUtils",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"Typedef",
+  "name":"Stove_FileUtils",
   "parent":{
-    "name":"ModManager",
-    "path":"folders/ModSupport/Stove/ModManager.yy",
+    "name":"Utils",
+    "path":"folders/ModSupport/Stove/Utils.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

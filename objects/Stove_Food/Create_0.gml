@@ -54,8 +54,8 @@ self.upgrade_data = {}
 /// @description Stove Custom Attributes and Methods
 /// 
 
-self.spatial_registry = global.stove_system.spatial_registry
-self.sprite_manager = global.stove_system.sprite_manager
+self.spatial_registry = global.stove.spatial_registry
+self.sprite_manager = global.stove.sprite_manager
 
 /// @type {Array<String>} 
 self.tags = []
@@ -87,10 +87,10 @@ should_exit = function() {
 on_create = function() {
     self.origin_x = x
     self.origin_y = y
-    self.spatial_registry = global.stove_system.spatial_registry
+    self.spatial_registry = global.stove.spatial_registry
     self.stove_utils = global.stove_utils
 
-    var _meta_data = global.stove_system.food_manager.get_food_meta_data(plant_id)
+    var _meta_data = global.stove.food_manager.get_food_meta_data(plant_id)
     if (is_undefined(_meta_data)) {
         throw("Plant not found: " + plant_id); 
     }
@@ -177,7 +177,7 @@ act_attack = function() {
 shoot = function() {
     for (var i = 0; i < array_length(damage_media_metadatas); i++) {
         var _damage_media_metadata = damage_media_metadatas[i]
-        var instance = global.stove_system.factory
+        var instance = global.stove.factory
                         .create_damage_media(_damage_media_metadata)
     }
 }

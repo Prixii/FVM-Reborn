@@ -76,7 +76,7 @@ function ShapedCardData (
     self.target_card = _target_card
     
     self.sprite_sheet_info = _sprite_sheet_info
-    self.sprite = global.stove_system.sprite_manager.request_sprite(_sprite_sheet_info.key)
+    self.sprite = global.stove.sprite_manager.request_sprite(_sprite_sheet_info.key)
 
 
     static get_register_card_data = function() {

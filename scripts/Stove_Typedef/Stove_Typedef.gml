@@ -1,6 +1,6 @@
 /// 
 
-#macro Stove global.stove_system
+#macro Stove global.stove
 #macro kInvalidGridId -1
 
 function Vector2() constructor {

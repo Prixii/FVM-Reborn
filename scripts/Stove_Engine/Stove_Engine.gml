@@ -5,13 +5,15 @@ function LuaFunc () constructor {
     self.helloLua = undefined;
 } 
 
-global.stove_system = {
+global.stove = {
     spatial_registry: new SpatialRegistry(),
     sprite_manager: new ModSpriteManager(),
     factory: new StoveFactory(),
     event_bus: new StoveEventBus(),
     lua_manager: new Stove_LuaManager(),
-    food_manager: new Stove_FoodManager()
+    food_manager: new Stove_FoodManager(),
+    file_utils: new Stove_FileUtils(),
+    logger: new Stove_Logger(),
 }
 
 global.mod_engine = {

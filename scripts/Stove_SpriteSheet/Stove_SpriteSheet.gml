@@ -93,14 +93,14 @@ function AnimationClip(_sprite_sheet_key, _start_frame, _frame_count) constructo
 
     /// @returns {Struct.Result} 
     static get_sprite_in_surface = function() {
-        var _get_surface_key_result = global.stove_system.sprite_manager.get_surface_key_by_sprite_sheet_key(self.sprite_sheet_key)
+        var _get_surface_key_result = global.stove.sprite_manager.get_surface_key_by_sprite_sheet_key(self.sprite_sheet_key)
         if (_get_surface_key_result.is_failed()) {
             return _get_surface_key_result
         }
 
         self.surface_key = _get_surface_key_result.data
-        self.surface_id = global.stove_system.sprite_manager.get_surface_id(self.surface_key)
-        var _layout = global.stove_system.sprite_manager.get_baked_layout(self.sprite_sheet_key)
+        self.surface_id = global.stove.sprite_manager.get_surface_id(self.surface_key)
+        var _layout = global.stove.sprite_manager.get_baked_layout(self.sprite_sheet_key)
         
         if (is_undefined(self.surface_id) || !surface_exists(self.surface_id) || is_undefined(_layout)) {
             return new Result().fail(
@@ -120,7 +120,7 @@ function AnimationClip(_sprite_sheet_key, _start_frame, _frame_count) constructo
         if (is_undefined(surface_id) || !surface_exists(surface_id)) {
             return
         }
-        var _layout = global.stove_system.sprite_manager.get_baked_layout(sprite_sheet_key)
+        var _layout = global.stove.sprite_manager.get_baked_layout(sprite_sheet_key)
         if (is_undefined(_layout)) {
             return
         }

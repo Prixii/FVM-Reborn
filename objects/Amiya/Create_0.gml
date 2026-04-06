@@ -21,7 +21,7 @@ is_slowdown = false
 self.is_frozen = false
 
 
-self.sprite_manager = global.stove_system.sprite_manager
+self.sprite_manager = global.stove.sprite_manager
 
 var idle_sprite_path = "mods/assets/amiya_idle.png"
 var attack_sprite_path = "mods/assets/amiya_attack.png"
@@ -42,7 +42,7 @@ global.stove_utils.debug_print_spatial_bitmap(attack_area_mask)
 
 self.attack_enemy_layer = [ENEMY_LAYER.AIR, ENEMY_LAYER.GROUND]
 self.attack_enemy_layer_mask = global.stove_utils.enemy_layers_to_mask(attack_enemy_layer)
-self.spatial_registry = global.stove_system.spatial_registry
+self.spatial_registry = global.stove.spatial_registry
 
 
 self.max_bullet_count = 6
