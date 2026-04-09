@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"GMLuaTest",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"GMLuaTest",
+  "parent":{
+    "name":"Test",
+    "path":"folders/ModSupport/Stove/Test.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

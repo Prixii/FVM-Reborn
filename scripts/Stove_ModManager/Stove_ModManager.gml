@@ -73,6 +73,7 @@ function Stove_ModManager() constructor {
         self.lua_manager = global.stove.lua_manager
         self.file_utils = global.stove.file_utils
         self.logger = global.stove.logger
+        self.lua_manager.init()
     }
 
     /// @param {String} _mod_parent_folder 

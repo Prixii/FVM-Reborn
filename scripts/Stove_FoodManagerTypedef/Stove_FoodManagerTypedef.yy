@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Stove_FoodManagerTypedef",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Stove_FoodManagerTypedef",
+  "parent":{
+    "name":"FoodManager",
+    "path":"folders/ModSupport/Stove/FoodManager.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

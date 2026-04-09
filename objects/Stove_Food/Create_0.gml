@@ -74,6 +74,7 @@ act_functions[CARD_STATE.ATTACK] = function() {
 self.idle_anim_clip = undefined
 /// @type {Struct.AnimationClip} 
 self.attack_anim_clip = undefined
+/// @type {Struct.AnimationClip} 
 self.current_anim_clip = undefined
 
 
@@ -102,7 +103,7 @@ on_create = function() {
     // attack
     var _grid_pos = get_grid_position_from_world(x, y);
     attack_area_mask = _meta_data.attack_area.calculate_attack_area_mask(_grid_pos.col, _grid_pos.row)
-    attack_enemy_layer_mask = global.stove_utils.enemy_layers_to_mask(_meta_data.attack_layers)
+    attack_enemy_layer_mask = global.stove.utils.enemy_layers_to_mask(_meta_data.attack_layers)
 
     upgrade_data = get_plant_data_with_skill(plant_id, shape, current_level, skill);
 
@@ -184,7 +185,7 @@ shoot = function() {
 
 // ----------- DRAW -------------
 on_draw = function() {
-    draw_self()
+    current_anim_clip.draw(image_index, x, y)
 }
 
 // ----------- DESTROY -------------

@@ -9,5 +9,6 @@ global.stove = {
     food_manager: new Stove_FoodManager(),
     file_utils: new Stove_FileUtils(),
     logger: new Stove_Logger(),
-    utils: new Stove_Utils()
+    utils: new Stove_Utils(),
+    food_manager_utils: new Stove_FoodManagerUtils()
 }

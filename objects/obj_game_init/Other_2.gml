@@ -26,7 +26,6 @@ global.plant_registry = ds_map_create();
 cards_init()
 
 /// @description Stove code
-global.stove.engine.init_card()
 
 ///
 
@@ -36,6 +35,11 @@ global.player_sprite = noone;
 
 load_file(global.save_slot)
 //reset_file(global.save_slot)
+/// @description Stove code
+// should call by event bus
+run_stove_test()
+
+///
 
 
 {//测试版设置初始存档

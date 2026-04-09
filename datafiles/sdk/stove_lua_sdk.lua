@@ -20,4 +20,14 @@ Stove.GetGmlFunction = function(name)
     return func
 end
 
+--- @param meta table 食物元数据（结构与 GML typedef / JSON 字段一致，camelCase）
+Stove.RegisterModFood = function(meta)
+    local func = Stove.GetGmlFunction("gml_register_mod_food")
+    if (func ~= nil) then
+        func(meta)
+    else
+        print("warn: failed to register food (register_food_from_json missing)")
+    end
+end
+
 return Stove

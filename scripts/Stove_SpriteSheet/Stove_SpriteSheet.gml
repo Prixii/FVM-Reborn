@@ -116,7 +116,10 @@ function AnimationClip(_sprite_sheet_key, _start_frame, _frame_count) constructo
     }
         
     /// @param {Real} _frame  相对本 clip 的帧（0 .. frame_count-1）
+    /// @param {Real} _x 
+    /// @param {Real} _y 
     static draw = function(_frame, _x, _y, _scale_x = 1, _scale_y = 1) {
+        var _actual_frame = _frame % self.frame_count
         if (is_undefined(surface_id) || !surface_exists(surface_id)) {
             return
         }
@@ -125,7 +128,7 @@ function AnimationClip(_sprite_sheet_key, _start_frame, _frame_count) constructo
             return
         }
 
-        var _fi = clamp(floor(_frame), 0, max(0, frame_count - 1))
+        var _fi = clamp(floor(_actual_frame), 0, max(0, frame_count - 1))
         var _abs = start_frame + _fi
         _abs = clamp(_abs, 0, max(0, _layout.frame_count - 1))
 

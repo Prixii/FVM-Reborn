@@ -1,14 +1,19 @@
 /// 
 
-
 function stove_global_test() {
     show_debug_message("stove_global_test")
     return 114
 }
 
-global.function_export_to_lua = {
-    "stove_global_test" : stove_global_test,
-};
+function gml_register_mod_food(_food_meta_data) {
+    if (_food_meta_data == undefined) {
+            global.stove.logger.log_e("gml_register_mod_food: food_meta_data is undefined")
+            return
+        }
+    global.stove.food_manager.register_food(FoodMetaDataFromLuaPlain(LuaType(_food_meta_data)))
+}
+
+global.function_export_to_lua = {};
 
 function Stove_LuaManager() constructor {
     self.mod_engine_scope = new Scope()
@@ -17,16 +22,29 @@ function Stove_LuaManager() constructor {
     self.variable_map = {}
 
     self.default_function_whitelist = [
+        "gml_register_mod_food",
         "stove_global_test",
-        "irandom"
     ]
 
     static init = function() {
+        global.function_export_to_lua[$ "stove_global_test"] = stove_global_test
+        global.function_export_to_lua[$ "gml_register_mod_food"] = gml_register_mod_food
+        
         show_debug_message("function index: " + string(asset_get_index("stove_global_test")));
         setFunctionNameList(default_function_whitelist, true)
         setGMLVariable(self.mod_engine_scope, "stove_lua_scope", self)
 
-        load_lua("sdk/stove_lua_sdk.lua")
+        var _sdk_files = [
+            "sdk/stove_lua_sdk.lua",
+            "sdk/stove_constant.lua",
+            "sdk/third/dkjson.lua",
+
+        ]
+
+        for (var i = 0; i < array_length(_sdk_files); ++i) {
+            load_lua(_sdk_files[i])
+        }
+        
     }
 
     /// @param {String} _path 
@@ -87,7 +105,7 @@ function Stove_LuaManager() constructor {
             _add_ast(_path, _ast)
             return new Result().success()
         } catch (e) {
-            return new Result().fail(STOVE_ERROR.LOAD_LUA_FAILED, "Failed to load lua: " + string(e))
+            return new Result().fail(STOVE_ERROR.LOAD_LUA_FAILED, "Failed to load lua: " + _path + "\n Error" + string(e))
         }
     }
     
