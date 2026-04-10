@@ -749,7 +749,6 @@
     {"id":{"name":"obj_zombie_with_wallnut","path":"objects/obj_zombie_with_wallnut/obj_zombie_with_wallnut.yy",},},
     {"id":{"name":"Stove_Damage","path":"objects/Stove_Damage/Stove_Damage.yy",},},
     {"id":{"name":"Stove_DamageMedia","path":"objects/Stove_DamageMedia/Stove_DamageMedia.yy",},},
-    {"id":{"name":"Stove_EngineObject","path":"objects/Stove_EngineObject/Stove_EngineObject.yy",},},
     {"id":{"name":"Stove_Food","path":"objects/Stove_Food/Stove_Food.yy",},},
     {"id":{"name":"room_battle","path":"rooms/room_battle/room_battle.yy",},},
     {"id":{"name":"room_init","path":"rooms/room_init/room_init.yy",},},

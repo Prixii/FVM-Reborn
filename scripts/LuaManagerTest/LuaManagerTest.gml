@@ -1,6 +1,6 @@
 /// 
 function lua_manager_test () {
-    var lua_manager = new Stove_LuaManager()
+    var lua_manager = global.stove.lua_manager
     lua_manager.init()
 
     lua_manager.load_lua("mods/mod.lua")

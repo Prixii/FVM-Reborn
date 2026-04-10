@@ -1,6 +1,6 @@
 /// 
 function file_utils_test () {
-    var file_util = new Stove_FileUtils()
+    var file_util = global.stove.file_utils
     var result = file_util.create_file_if_not_exist(working_directory + "test.txt")
     test_assert_equal(result.is_succeed(), true, "create_file_if_not_exist should succeed");
     result = file_util.append_data_to_file( working_directory + "test.txt", "test")
@@ -11,7 +11,7 @@ function file_utils_test () {
         show_debug_message("\t" + _sub_folders[i])
     }
 
-    var logger = new Stove_Logger()
+    var logger = global.stove.logger
     logger.init(working_directory + "stove_logger.txt")
     logger.log_e("Test error")
     logger.log_w("Test warn")

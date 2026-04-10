@@ -1,7 +1,4 @@
 /// 
-global.stove.mod_manager = {
-    utils: new Stove_ModManagerUtils(),
-}
 
 function Stove_ModManager() constructor {
     self.mod_metadatas = {}
@@ -14,10 +11,12 @@ function Stove_ModManager() constructor {
     /// @type {Struct.Stove_Logger}
     self.logger = undefined
 
+    self.utils = new Stove_ModManagerUtils()
+
     /// @returns {Struct.Result<String>} key of mod
     static _register_mod = function(_mod_path) {
         var _manifest_path = _mod_path + "/manifest.json"
-        var _manifest_load_result = global.stove.mod_manager.utils.load_mod_manifest_and_parse(_manifest_path)
+        var _manifest_load_result = utils.load_mod_manifest_and_parse(_manifest_path)
         if (_manifest_load_result.is_failed()) {
             return _manifest_load_result
         }
@@ -27,7 +26,7 @@ function Stove_ModManager() constructor {
         return new Result().success(_manifest_path)
     }
 
-    /// @param {String} _key 
+    /// @param {String} _key (mod path)
     /// @param {Struct.Stove_ModMetadata} _mod_metadata 
     static _add_mod_metadata = function(_key, _mod_metadata) {
         self.mod_metadatas[$ _key] = _mod_metadata
@@ -114,6 +113,16 @@ function Stove_ModManager() constructor {
                 return _result
             }
         }
+        return new Result().success()
+    }
+
+    /// @returns {Struct.Result} 
+    static load_all_sprites = function() {
+        var _bake_result = global.stove.sprite_manager.bake_all_sprites()
+        if (_bake_result.is_failed()) {
+            return _bake_result
+        }
+        global.stove.food_manager.load_all_sprites()
         return new Result().success()
     }
 }

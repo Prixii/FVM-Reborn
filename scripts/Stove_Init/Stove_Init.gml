@@ -1,5 +1,6 @@
 /// 
 global.stove = {
+    mod_manager: new Stove_ModManager(),
     engine: new Stove_Engine(),
     spatial_registry: new SpatialRegistry(),
     sprite_manager: new ModSpriteManager(),

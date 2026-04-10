@@ -20,6 +20,17 @@ function register_mod_food(_foodMetaData) {
     register_card_info_island(
         _foodMetaData.id, 
         _foodMetaData.infoIslandDescription)
+
+    var _cards = _foodMetaData.shapedCardDatas
+    for (var _ri = 0; _ri < array_length(_cards); _ri++) {
+        var _c = _cards[_ri]
+        global.stove.sprite_manager.register_sprite(_c.sprite_sheet_info)
+        var _idle_path = _c.animatable.idleAnimation.spriteSheet.path
+        var _atk_sheet = _c.animatable.attackAnimation.spriteSheet
+        if (_atk_sheet.path != _idle_path) {
+            global.stove.sprite_manager.register_sprite(new SpriteSheetInfo(_atk_sheet.path, _atk_sheet.frameCount))
+        }
+    }
 }
 
 /// @param {String} _id
@@ -149,8 +160,9 @@ function ShapedCardData(_basicInfo, _animatable, _attackable) constructor {
     self.cycle = array_create(kMaxLevel, _attackable.defaultCycle)
 
     var _idle_sheet = _animatable.idleAnimation.spriteSheet
-    var _sprite_sheet_info = new SpriteSheetInfo(_idle_sheet.path, _idle_sheet.frameCount)
-    self.sprite = global.stove.sprite_manager.request_sprite(_sprite_sheet_info.key)
+    
+    self.sprite_sheet_info = new SpriteSheetInfo(_idle_sheet.path, _idle_sheet.frameCount)
+    self.sprite = undefined
 }
 
 
@@ -303,5 +315,17 @@ function FoodMetaDataFromLuaPlain(_lua_typed) {
         food_lua_plain_get(_lua_typed, "infoIslandDescription"),
         skill_info_from_lua_plain(food_lua_plain_get(_lua_typed, "skillInfo")),
         _tags);
+}
+
+/// @param {Struct.ShapedCardData} _shaped_card_data 
+function set_static_preview(_shaped_card_data) {
+    var _spr = global.stove.sprite_manager.request_sprite(_shaped_card_data.sprite_sheet_info.key)
+    _shaped_card_data.sprite = _spr
+    if (is_undefined(_spr) || _spr == -1 || !sprite_exists(_spr)) {
+        _shaped_card_data.sprite = undefined
+        global.stove.logger.log_e("failed to load sprite for sprite: " + string(_shaped_card_data.sprite_sheet_info.key))
+    } else {
+        global.stove.logger.log_d("sprite id for sprite: " + string(_shaped_card_data.sprite))
+    }
 }
 

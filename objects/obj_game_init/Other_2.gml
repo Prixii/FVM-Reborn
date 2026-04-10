@@ -37,7 +37,11 @@ load_file(global.save_slot)
 //reset_file(global.save_slot)
 /// @description Stove code
 // should call by event bus
-run_stove_test()
+if (global.stove.engine.test_mode) {
+	run_stove_test()
+} else {
+	global.stove.engine.init();
+}
 
 ///
 

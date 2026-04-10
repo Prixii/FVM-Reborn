@@ -406,11 +406,12 @@ function ModSpriteManager() constructor {
         }
         var _layout = get_baked_layout(_key)
         if (is_undefined(_layout)) {
-            show_debug_message("Stove ModSpriteManager: key not baked, call bake_all_sprites first: " + string(_key))
+            global.stove.logger.log_e("Stove ModSpriteManager: key not baked, call bake_all_sprites first: " + string(_key))
             return -1
         }
         var _sid = get_surface_id(_layout.surface_key)
         if (is_undefined(_sid) || !surface_exists(_sid)) {
+            global.stove.logger.log_e("Stove ModSpriteManager: surface not found, call bake_all_sprites first: " + string(_key))
             return -1
         }
 
@@ -419,6 +420,7 @@ function ModSpriteManager() constructor {
         var _fc = _layout.frame_count
         var _spr = sprite_create_from_surface(_sid, _layout.x, _layout.y, _fw, _fh, false, false, 0, 0)
         if (_spr == -1) {
+            global.stove.logger.log_e("Stove ModSpriteManager: sprite_create_from_surface failed, call bake_all_sprites first: " + string(_key))
             return -1
         }
         for (var _i = 1; _i < _fc; _i++) {

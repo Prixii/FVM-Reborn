@@ -69,5 +69,5 @@ end
 
 function AmiyaMain()
     print("Hello! Here is Amiya Mod!")
-    RegisterCard()
+    -- RegisterCard()
 end
