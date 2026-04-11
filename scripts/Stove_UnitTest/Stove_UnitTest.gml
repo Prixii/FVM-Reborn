@@ -15,5 +15,6 @@ function run_stove_test() {
     gmlua_test()
     file_utils_test()
     mod_manager_test()
+    stage_manager_test()
     show_debug_message("-------------Stove Unit Test End-------------")
 }

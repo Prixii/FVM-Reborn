@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Stove_StageManagerTypedef",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Stove_StageManagerTypedef",
+  "parent":{
+    "name":"StageManager",
+    "path":"folders/ModSupport/Stove/StageManager.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

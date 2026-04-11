@@ -105,4 +105,51 @@ function Stove_FileUtils() constructor {
         }
         return new Result().success();
     }
+
+    /// @param {String} _path 
+    /// @returns {Struct.Result<Struct>} 
+    static load_json_from_path = function(_path) {
+        if (!file_exists(_path)) {
+            return new Result().fail(STOVE_ERROR.NO_SUCH_FILE, "File not found: " + _path)
+        }
+        var _buffer = buffer_load(_path);
+        if (!buffer_exists(_buffer)) {
+            return new Result().fail(STOVE_ERROR.NO_SUCH_FILE, "Could not load file into buffer: " + _path)
+        }
+        var _raw_json = buffer_read(_buffer, buffer_string);
+        buffer_delete(_buffer);
+        try {
+            var _json = json_parse(_raw_json);
+            if (!is_struct(_json) && !is_array(_json)) {
+                return new Result().fail(STOVE_ERROR.JSON_PARSE_FAILED, "Failed to parse json, root must be struct or array: " + _path);
+            }
+
+            return new Result().success(_json);
+        } catch (e) {
+            return new Result().fail(STOVE_ERROR.JSON_PARSE_FAILED, "Failed to parse json: " + _path + "\n" + string(e));
+        }
+    }
+
+    /// @description Path passed to buffer_load for a level JSON (bundled level_data/… or absolute mod path).
+    /// @param {String} _level_file  maps_init level_file (often relative to level_data/)
+    /// @param {String} [_hard_file] 
+    /// @param {Bool} [_use_hard] 
+    /// @returns {String} 
+    static resolve_level_data_buffer_path = function(_level_file, _hard_file = undefined, _use_hard = false) {
+        var f = (_use_hard && _hard_file != undefined && string(_hard_file) != "") ? string(_hard_file) : string(_level_file)
+        if (f == "") {
+            return f
+        }
+        f = string_replace_all(f, "\\", "/")
+        if (string_length(f) >= 2 && string_char_at(f, 2) == ":") {
+            return f
+        }
+        if (string_length(f) >= 1 && string_char_at(f, 1) == "/") {
+            return f
+        }
+        if (string_length(f) >= 11 && string_copy(f, 1, 11) == "level_data/") {
+            return f
+        }
+        return "level_data/" + f
+    }
 }

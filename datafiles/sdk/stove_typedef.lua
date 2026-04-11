@@ -1,95 +1,6 @@
---- @meta
---- typedef
-
-
--- local _spriteSheet = {
---     path = "",
---     frameCount = -1
--- }
-
-
--- local _animationClip = {
---     spriteSheet = _spriteSheet,
---     start_frame = 0,
---     end_frame = 12
--- }
-
--- local _skillInfo = {
---     key = "atk",
---     data = { 20, 30, 40, 50, 60, 70, 100, 90, 110, 120, 130, 140 }
--- }
-
-
-
--- local _foodBasicInfo = {
---     name = "",
---     shape = -1,
---     description = "",
---     defaultHp = 0,
---     defaultCost = 0,
---     defaultCooldown = 0,
---     plantType = "normal",
---     featureType = "normal",
---     targetFood = "none"
-
--- }
-
--- local _foodAnimatable = {
---     idleAnimation = _animationClip,
---     attackAnimation = _animationClip,
--- }
-
-
--- local _damage = {
---     type = "single",
---     atk = 20
--- }
-
--- local _kinematic = {
---     speed = 5,
---     direction = "forward"
--- }
-
-
--- local _bullet = {
---     damage = _damage,
---     kinematic = _kinematic,
---     tags = { "projectile", "magic" }
--- }
-
-
--- local _attackArea = {
---     type = "line",
---     direction = "forward",
---     distance = 9
--- }
-
-
--- local _foodAttackable = {
---     attackLayer = { "ground", "air" },
---     defaultBullets = { _bullet },
---     attackArea = _attackArea,
---     defaultCycle = 1 * StoveConstant.SECOND
--- }
-
-
--- local _shapedCardData = {
---     basicInfo = _foodBasicInfo,
---     animatable = _foodAnimatable,
---     attackable = _foodAttackable
--- }
-
-
--- local _foodMetaData = {
---     id = "amiya",
---     infoIslandDescription = "这可是罗德岛尊贵的CEO口牙",
---     skillInfo = _skillInfo,
---     shapedCardDatas = { _shapedCardData },
---     tags = { "tag1", "tag2" }
--- }
-
-
 ---@meta
+
+-- FOOD
 
 ---@class SpriteSheet
 ---@field path string 图片路径
@@ -166,3 +77,26 @@ local _shapedCardData = {}
 ---@field shapedCardDatas ShapedCardData[] 多形态/配置数据列表
 ---@field tags string[] 标签
 local _foodMetaData = {}
+
+-- STAGE
+
+---@alias StoveAssetManager.AssetSource integer
+---@alias StoveAssetManager.OriginalMusic integer
+---@alias StoveAssetManager.OriginalSprite integer
+
+---@class StoveAsset
+---@field source StoveAssetManager.AssetSource 资源来源
+---@field path string 资源路径
+---@field gmlAsset StoveAssetManager.OriginalSprite 原生资源
+local _asset = {}
+
+---@class StageMetaData
+---@field name string 关卡名称
+---@field description string 关卡描述
+---@field preMusic StoveAsset 音乐
+---@field eliteMusic StoveAsset 音乐
+---@field bossMusic StoveAsset 音乐
+---@field background StoveAsset 背景
+---@field author string 作者
+---@field jsonPath string JSON 资源路径
+local _stageMetaData = {}

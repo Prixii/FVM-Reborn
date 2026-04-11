@@ -67,7 +67,50 @@ function RegisterCard()
     Stove.RegisterModFood(_amiyaMetaData)
 end
 
+function RegisterStage()
+    -- 与 datafiles/sdk/stove_asset_manager.lua 中枚举值一致（避免 GMLua 上 StoveAssetManager.x.y 链式索引异常）
+    local AS_IN_GAME = 0x00
+    local MUS_PRE = 0x2000
+    local MUS_ELITE = 0x2001
+    local MUS_BOSS = 0x2002
+    local SPR_PUDDING_NIGHT = 0x1008
+    --- @class (partial) StoveAsset
+    local preMusic = {
+        ["source"] = AS_IN_GAME,
+        ["gmlAsset"] = MUS_PRE
+    }
+    --- @class (partial) StoveAsset
+    local eliteMusic = {
+        ["source"] = AS_IN_GAME,
+        ["gmlAsset"] = MUS_ELITE
+    }
+    --- @class (partial) StoveAsset
+    local bossMusic = {
+        ["source"] = AS_IN_GAME,
+        ["gmlAsset"] = MUS_BOSS
+    }
+    --- @class (partial) StoveAsset
+    local background = {
+        ["source"] = AS_IN_GAME,
+        ["gmlAsset"] = SPR_PUDDING_NIGHT
+    }
+    --- @class (partial) StageMetaData
+    local stageMetaData = {
+        ["name"] = "test_stage",
+        ["description"] = "test stage",
+        ["preMusic"] = preMusic,
+        ["eliteMusic"] = eliteMusic,
+        ["bossMusic"] = bossMusic,
+        ["background"] = background,
+        ["author"] = "Wis'adel",
+        ["jsonPath"] = "tower-9-2_hard.json"
+    }
+
+    Stove.RegisterModStage(stageMetaData)
+end
+
 function AmiyaMain()
     print("Hello! Here is Amiya Mod!")
     -- RegisterCard()
+    RegisterStage()
 end

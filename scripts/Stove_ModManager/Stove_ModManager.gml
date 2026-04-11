@@ -2,6 +2,8 @@
 
 function Stove_ModManager() constructor {
     self.mod_metadatas = {}
+    /// 执行模组入口函数期间为当前模组根目录（供 Stove.RegisterModStage 解析相对 jsonPath）
+    self._active_mod_folder = ""
     /// @type {Array<String>} 
     self.mod_keys = []
     /// @type {Struct.Stove_LuaManager} 
@@ -45,9 +47,15 @@ function Stove_ModManager() constructor {
         if (_mod_metadata == undefined) {
             return
         }
-        return lua_manager.run_lua_function(
-            _mod_metadata.get_script_path(_mod_metadata.manifest.main_script), 
-            _mod_metadata.manifest.entry_function)
+        var _prev_active = self._active_mod_folder
+        self._active_mod_folder = _mod_metadata.folder_path
+        try {
+            return lua_manager.run_lua_function(
+                _mod_metadata.get_script_path(_mod_metadata.manifest.main_script),
+                _mod_metadata.manifest.entry_function)
+        } finally {
+            self._active_mod_folder = _prev_active
+        }
     }
 
     /// @param {String} _mod_key 

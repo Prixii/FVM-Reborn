@@ -11,5 +11,6 @@ global.stove = {
     file_utils: new Stove_FileUtils(),
     logger: new Stove_Logger(),
     utils: new Stove_Utils(),
-    food_manager_utils: new Stove_FoodManagerUtils()
+    food_manager_utils: new Stove_FoodManagerUtils(),
+    stage_manager: new Stove_StageManager()
 }

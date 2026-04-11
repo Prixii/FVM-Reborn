@@ -1,7 +1,7 @@
 /// 
 
 function Stove_Engine() constructor {
-    self.test_mode = false
+    self.test_mode = true
     self.is_ready = false
     /// @type {Struct.ASTChunk} 
     self.mod_cards = []

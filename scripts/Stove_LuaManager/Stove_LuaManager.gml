@@ -5,12 +5,20 @@ function stove_global_test() {
     return 114
 }
 
-function gml_register_mod_food(_food_meta_data) {
-    if (_food_meta_data == undefined) {
+function gml_register_mod_food(_food_metadata) {
+    if (_food_metadata == undefined) {
             global.stove.logger.log_e("gml_register_mod_food: food_meta_data is undefined")
             return
         }
     global.stove.food_manager.register_food(FoodMetaDataFromLuaPlain(LuaType(_food_meta_data)))
+}
+
+function gml_register_mod_stage(_stage_metadata) {
+    if (_stage_metadata == undefined) {
+            global.stove.logger.log_e("gml_register_mod_stage: stage_meta_data is undefined")
+            return
+        }
+    global.stove.stage_manager.register_stage_metadata_from_lua_table(LuaType(_stage_metadata))
 }
 
 global.function_export_to_lua = {};
@@ -24,11 +32,13 @@ function Stove_LuaManager() constructor {
     self.default_function_whitelist = [
         "gml_register_mod_food",
         "stove_global_test",
+        "gml_register_mod_stage",
     ]
 
     static init = function() {
         global.function_export_to_lua[$ "stove_global_test"] = stove_global_test
         global.function_export_to_lua[$ "gml_register_mod_food"] = gml_register_mod_food
+        global.function_export_to_lua[$ "gml_register_mod_stage"] = gml_register_mod_stage
         
         show_debug_message("function index: " + string(asset_get_index("stove_global_test")));
         setFunctionNameList(default_function_whitelist, true)
@@ -37,8 +47,7 @@ function Stove_LuaManager() constructor {
         var _sdk_files = [
             "sdk/stove_lua_sdk.lua",
             "sdk/stove_constant.lua",
-            "sdk/third/dkjson.lua",
-
+            "sdk/stove_asset_manager.lua",
         ]
 
         for (var i = 0; i < array_length(_sdk_files); ++i) {

@@ -5,10 +5,11 @@ if not obj_tower_cake_bg.is_submenu_opened && is_unlocked{
 	global.level_data = level_list[level_index]
 
 	global.level_id = global.level_data.id
-	var _file_path = "level_data/" + global.level_data.level_file
-	if global.difficulty >= 2{
-		_file_path = "level_data/" + global.level_data.hard_level_file
-	}
+	var _file_path = global.stove.file_utils.resolve_level_data_buffer_path(
+		global.level_data.level_file,
+		global.level_data.hard_level_file,
+		global.difficulty >= 2
+	)
 
 
 	 //使用 load_buffer 和 buffer_read 加载文件内容

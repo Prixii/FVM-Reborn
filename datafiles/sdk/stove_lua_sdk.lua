@@ -30,4 +30,15 @@ Stove.RegisterModFood = function(meta)
     end
 end
 
+--- @param stageMetaData StageMetaData
+Stove.RegisterModStage = function(stageMetaData)
+    local func = Stove.GetGmlFunction("gml_register_mod_stage")
+    if (func ~= nil) then
+        func(stageMetaData)
+    else
+        print("warn: failed to register stage (register_stage_from_json missing)")
+    end
+end
+
+
 return Stove
