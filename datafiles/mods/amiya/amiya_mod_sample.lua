@@ -68,31 +68,26 @@ function RegisterCard()
 end
 
 function RegisterStage()
-    -- 与 datafiles/sdk/stove_asset_manager.lua 中枚举值一致（避免 GMLua 上 StoveAssetManager.x.y 链式索引异常）
-    local AS_IN_GAME = 0x00
-    local MUS_PRE = 0x2000
-    local MUS_ELITE = 0x2001
-    local MUS_BOSS = 0x2002
-    local SPR_PUDDING_NIGHT = 0x1008
+    -- gmlAsset 使用 stove_asset_manager.lua 中的 GML 资源名字符串（内嵌 Lua 不支持 0x 字面量）
     --- @class (partial) StoveAsset
     local preMusic = {
-        ["source"] = AS_IN_GAME,
-        ["gmlAsset"] = MUS_PRE
+        ["source"] = StoveAssetManager.AssetSource.IN_GAME,
+        ["gmlAsset"] = StoveAssetManager.OriginalMusic.DELICIOUS_TOWER_PRE
     }
     --- @class (partial) StoveAsset
     local eliteMusic = {
-        ["source"] = AS_IN_GAME,
-        ["gmlAsset"] = MUS_ELITE
+        ["source"] = StoveAssetManager.AssetSource.IN_GAME,
+        ["gmlAsset"] = StoveAssetManager.OriginalMusic.DELICIOUS_TOWER_ELITE
     }
     --- @class (partial) StoveAsset
     local bossMusic = {
-        ["source"] = AS_IN_GAME,
-        ["gmlAsset"] = MUS_BOSS
+        ["source"] = StoveAssetManager.AssetSource.IN_GAME,
+        ["gmlAsset"] = StoveAssetManager.OriginalMusic.DELICIOUS_TOWER_BOSS
     }
     --- @class (partial) StoveAsset
     local background = {
-        ["source"] = AS_IN_GAME,
-        ["gmlAsset"] = SPR_PUDDING_NIGHT
+        ["source"] = StoveAssetManager.AssetSource.IN_GAME,
+        ["gmlAsset"] = StoveAssetManager.OriginalSprite.PUDDING_ISLAND_NIGHT
     }
     --- @class (partial) StageMetaData
     local stageMetaData = {

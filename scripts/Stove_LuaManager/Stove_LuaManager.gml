@@ -51,7 +51,10 @@ function Stove_LuaManager() constructor {
         ]
 
         for (var i = 0; i < array_length(_sdk_files); ++i) {
-            load_lua(_sdk_files[i])
+            var _load_result = load_lua(_sdk_files[i])
+            if (_load_result.is_failed()) {
+                return _load_result
+            }
         }
         
     }

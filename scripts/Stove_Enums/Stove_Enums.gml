@@ -126,7 +126,7 @@ enum ORIGINAL_SPRITE {
 }
 
 /// @description Resolve Lua interop numeric id (ORIGINAL_SPRITE) to a built-in sprite asset.
-/// @param {Real|Enum.ORIGINAL_SPRITE} _id  Value from Stove_Asset.gml_asset_name when using ORIGINAL_SPRITE ids.
+/// @param {Real|Enum.ORIGINAL_SPRITE} _id
 /// @returns {Asset.GMSprite}  Sprite handle, or -1 if unknown.
 function stove_original_sprite_from_enum(_id) {
     switch (_id) {
@@ -149,7 +149,7 @@ function stove_original_sprite_from_enum(_id) {
 }
 
 /// @description Resolve Lua interop numeric id (ORIGINAL_MUSIC) to a built-in sound asset.
-/// @param {Real|Enum.ORIGINAL_MUSIC} _id  Value from Stove_Asset.gml_asset_name when using ORIGINAL_MUSIC ids.
+/// @param {Real|Enum.ORIGINAL_MUSIC} _id
 /// @returns {Asset.GMSound}  Sound handle, or -1 if unknown.
 function stove_original_music_from_enum(_id) {
     switch (_id) {

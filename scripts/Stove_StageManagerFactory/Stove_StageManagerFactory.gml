@@ -52,7 +52,7 @@ function Stove_StageManagerFactory() constructor {
         return (fn != "") ? fn : "mod_stage"
     }
 
-    /// Lua / JSON 常用 camelCase「gmlAsset」；GML 侧 Stove_Asset 使用 gml_asset_name。
+    /// Lua / JSON 常用 camelCase「gmlAsset」（推荐 GML 资源名字符串，如 spr_xxx / mus_xxx）；GML 侧 Stove_Asset 使用 gml_asset_name。
     /// @param {Struct|Undefined} _raw 
     /// @returns {Struct.Stove_Asset|Undefined} 
     static _normalize_stage_asset = function(_raw) {

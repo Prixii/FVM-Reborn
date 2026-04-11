@@ -28,3 +28,20 @@ function Stove_StageMetadata() constructor {
     self.id = ""
     
 }
+
+function Stove_StageData() constructor {
+    self.id = undefined
+    self.name = undefined
+    self.button_spr = undefined
+    self.button_index = undefined
+    self.button_x = undefined
+    self.button_y = undefined
+    self.level_file = undefined
+    self.hard_level_file = undefined
+    self.level_sprite = undefined
+    self.pre_music = undefined
+    self.elite_music = undefined
+    self.boss_music = undefined
+    self.player_level_require = undefined
+    self.pre_level_require =undefined
+}

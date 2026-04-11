@@ -39,6 +39,3 @@ Stove.RegisterModStage = function(stageMetaData)
         print("warn: failed to register stage (register_stage_from_json missing)")
     end
 end
-
-
-return Stove

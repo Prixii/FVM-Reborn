@@ -1,7 +1,7 @@
 /// 
 function Stove_StageManagerUtils() constructor {
 
-    /// @param {Struct.Stove_Asset|Undefined} _asset 
+    /// @param {Struct.Stove_Asset|Undefined} _asset  gml_asset_name 须为 GML 资源名字符串（如 spr_xxx / mus_xxx）
     /// @returns {Real}  asset index, or -1
     static asset_to_game_index = function(_asset) {
         if (!is_struct(_asset)) {
@@ -14,25 +14,15 @@ function Stove_StageManagerUtils() constructor {
             return -1
         }
         var n = _asset.gml_asset_name
-        if (is_string(n)) {
-            return asset_get_index(n)
+        if (!is_string(n)) {
+            return -1
         }
-        if (is_real(n)) {
-            var _spr = stove_original_sprite_from_enum(n)
-            if (_spr != -1) {
-                return _spr
-            }
-            var _snd = stove_original_music_from_enum(n)
-            if (_snd != -1) {
-                return _snd
-            }
-        }
-        return -1
+        return asset_get_index(n)
     }
 
     /// @param {Struct.Stove_StageMetadata} _meta 
     /// @param {Real} _button_index 
-    /// @returns {Struct}  One entry compatible with global.maps_map levels_data (see maps_init)
+    /// @returns {Struct.Stove_StageData}  One entry compatible with global.maps_map levels_data (see maps_init)
     static level_entry_from_stage_metadata = function(_meta, _button_index) {
         var lf = string_replace_all(string(_meta.json_path), "\\", "/")
         var hf = lf

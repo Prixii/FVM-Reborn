@@ -10,6 +10,10 @@ function stage_manager_test() {
     test_assert_equal(stove_original_music_from_enum(ORIGINAL_MUSIC.DELICIOUS_TOWER_PRE), mus_delicious_tower_pre, "stove_original_music_from_enum: DELICIOUS_TOWER_PRE", false)
     test_assert_equal(stove_original_music_from_enum(99999), -1, "stove_original_music_from_enum: unknown → -1", false)
 
+    var _bg_name = new Stove_Asset()
+    _bg_name.gml_asset_name = "spr_pudding_island_night"
+    test_assert_equal(_sm.util.asset_to_game_index(_bg_name), spr_pudding_island_night, "asset_to_game_index: gml_asset_name 为资源名字符串", false)
+
     test_assert_equal(_fu.resolve_level_data_buffer_path("cookie_island.json", "cookie_island_hard.json", false), "level_data/cookie_island.json", "resolve_level_data_buffer_path: normal", false)
     test_assert_equal(_fu.resolve_level_data_buffer_path("cookie_island.json", "cookie_island_hard.json", true), "level_data/cookie_island_hard.json", "resolve_level_data_buffer_path: hard", false)
 
@@ -30,4 +34,9 @@ function stage_manager_test() {
     test_assert_equal(_entry.id, _meta.id, "level_entry_from_stage_metadata: id", false)
     var _lf = string_replace_all(string(_meta.json_path), "\\", "/")
     test_assert_equal(_entry.level_file, _lf, "level_entry_from_stage_metadata: level_file", false)
+
+    var _prep = _sm.prepare_playable_level_from_registered_stage(_ids[0], 0)
+    test_assert_equal(_prep.is_succeed(), true, "prepare_playable_level_from_registered_stage 成功", false)
+    test_assert_equal(string(global.level_id), string(_meta.id), "prepare 后 global.level_id", false)
+    test_assert_equal(is_struct(global.level_file), true, "prepare 后 global.level_file 为 struct", false)
 }

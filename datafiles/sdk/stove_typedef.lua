@@ -81,13 +81,13 @@ local _foodMetaData = {}
 -- STAGE
 
 ---@alias StoveAssetManager.AssetSource integer
----@alias StoveAssetManager.OriginalMusic integer
----@alias StoveAssetManager.OriginalSprite integer
+---@alias StoveAssetManager.OriginalMusic string
+---@alias StoveAssetManager.OriginalSprite string
 
 ---@class StoveAsset
 ---@field source StoveAssetManager.AssetSource 资源来源
 ---@field path string 资源路径
----@field gmlAsset StoveAssetManager.OriginalSprite 原生资源
+---@field gmlAsset string 原生资源名（spr_xxx / mus_xxx，与 GameMaker asset 名一致）
 local _asset = {}
 
 ---@class StageMetaData

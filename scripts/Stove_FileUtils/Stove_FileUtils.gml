@@ -130,7 +130,7 @@ function Stove_FileUtils() constructor {
         }
     }
 
-    /// @description Path passed to buffer_load for a level JSON (bundled level_data/… or absolute mod path).
+    /// @description Path passed to buffer_load：内置关卡为 level_data/…；模组为 mods/…（与 level_data 同级）；或绝对路径。
     /// @param {String} _level_file  maps_init level_file (often relative to level_data/)
     /// @param {String} [_hard_file] 
     /// @param {Bool} [_use_hard] 
@@ -148,6 +148,10 @@ function Stove_FileUtils() constructor {
             return f
         }
         if (string_length(f) >= 11 && string_copy(f, 1, 11) == "level_data/") {
+            return f
+        }
+        // 模组关卡 JSON 在 datafiles/mods/… 下，与 level_data 并列，不得再加 level_data/ 前缀
+        if (string_length(f) >= 5 && string_copy(f, 1, 5) == "mods/") {
             return f
         }
         return "level_data/" + f

@@ -829,7 +829,6 @@
     {"id":{"name":"StageManagerTest","path":"scripts/StageManagerTest/StageManagerTest.yy",},},
     {"id":{"name":"Stove_AttackArea","path":"scripts/Stove_AttackArea/Stove_AttackArea.yy",},},
     {"id":{"name":"Stove_BulletRegister","path":"scripts/Stove_BulletRegister/Stove_BulletRegister.yy",},},
-    {"id":{"name":"Stove_CardRegister","path":"scripts/Stove_CardRegister/Stove_CardRegister.yy",},},
     {"id":{"name":"Stove_Constants","path":"scripts/Stove_Constants/Stove_Constants.yy",},},
     {"id":{"name":"Stove_DamageMediaMetadata","path":"scripts/Stove_DamageMediaMetadata/Stove_DamageMediaMetadata.yy",},},
     {"id":{"name":"Stove_Engine","path":"scripts/Stove_Engine/Stove_Engine.yy",},},
