@@ -6,3 +6,4 @@ damage = 0
 timer = 0
 max_time = 0
 grid_pos = 0
+target_type = "all"

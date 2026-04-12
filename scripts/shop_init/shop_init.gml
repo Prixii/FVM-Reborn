@@ -10,6 +10,8 @@ function shop_init(){
 	register_goods("gatlin_ice_long_bao",{"type":"card","cost":"20000","unlock_item_id":"gatlin_ice_long_bao","description":"机枪冰冻小笼包：发射四发冰包子","display_name":"机枪冰冻小笼包"})
 	register_goods("aquarius_elve",{"type":"card","cost":"15000","unlock_item_id":"aquarius_elve","description":"水瓶座精灵：本行5格和本列5格范围爆炸","display_name":"水瓶座精灵"})
 	register_goods("tar_sprayer",{"type":"card","cost":"80000","unlock_item_id":"tar_sprayer","description":"焦油喷壶：喷出可被点燃的油滴穿透攻击四格内敌人","display_name":"焦油喷壶"})
+	register_goods("durian",{"type":"card","cost":"30000","unlock_item_id":"durian","description":"榴莲：伤害3*3范围敌人","display_name":"榴莲"})
+	register_goods("dragon_fruit",{"type":"card","cost":"50000","unlock_item_id":"dragon_fruit","description":"火龙果：伤害3*3范围敌人","display_name":"火龙果"})
 	
 	register_goods("card_slot_plus",{"type":"item","cost":"20000","unlock_item_id":"card_slot","description":"增加一格卡槽，仅可在卡槽数小于18时使用","display_name":"卡槽+1","spr":spr_slot_plus})
 	register_goods("card_slot_19",{"type":"item","cost":"50000","unlock_item_id":"card_slot_19","description":"解锁第19格卡槽","display_name":"卡槽第19格","spr":spr_slot_19})
@@ -30,4 +32,5 @@ function shop_init(){
 	register_goods("guard_gem",{"type":"gem","cost":"20000","unlock_item_id":"guard_gem","description":"守护宝石：治疗周围卡片并增加生命上限","display_name":"守护宝石"})
 	register_goods("strength_gem",{"type":"gem","cost":"50000","unlock_item_id":"strength_gem","description":"蓄力宝石：增加周围卡片伤害","display_name":"蓄力宝石"})
 	register_goods("ice_spoon_crossbow",{"type":"weapon","cost":"20000","unlock_item_id":"ice_spoon_crossbow","description":"冰勺弩枪：投掷减速冰鸡蛋","display_name":"冰勺弩枪"})
+	register_goods("poseidon_dart_gun",{"type":"weapon","cost":"80000","unlock_item_id":"poseidon_dart_gun","description":"海神镖枪：发射两个追踪飞镖攻击敌人","display_name":"海神镖枪"})
 }

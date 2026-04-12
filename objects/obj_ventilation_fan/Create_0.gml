@@ -27,5 +27,5 @@ is_slowdown = false
 effect_timer = 0
 
 ignore_list = ["mario_mouse","mario_pipeline","arno","pharaoh_coffin","temple_pharaoh","ice_residue","rumble","abyss_pharaoh",
-				"pink_paul","paul_tentacle","blonde_mary","pete","pete_claw","pete_spike","bat_mouse"
+				"pink_paul","paul_tentacle","blonde_mary","pete","pete_claw","pete_spike","bat_mouse","barrier"
 ]

@@ -21,6 +21,9 @@ hover_card_index = -1
 hover_gem_index = -1
 close_timer = -1
 
+y_offset = 0
+card_surface = -1
+
 current_uprade_target_id = ""
 
 spices_use_order = ["natural_spices","secret_spices","royal_spices"]

@@ -90,6 +90,16 @@ function weapons_init(){
 									"name":"冰勺弩枪",
 									"atk_impact":[72, 84, 96, 118, 140, 162, 196, 232, 270, 335, 430, 535, 650, 775, 910, 1045]
 									})
+		register_weapon("poseidon_dart_gun",{"sprite":spr_poseidon_dart_gun,
+										"icon":spr_poseidon_dart_gun_icon,
+										"obj":obj_poseidon_dart_gun,
+										"slot":"main_weapon",
+										"atk":20,
+										"cycle":90,
+										"description":"海神镖枪：发射两个追踪飞镖攻击敌人",
+										"name":"海神镖枪",
+										"atk_impact":[24,28,32,36,40,44,52,64,80,110,140,170,200,230,260,290]
+										})
 	}
 	{//注册所有副武器
 		register_weapon("cookie_shield",{"sprite":spr_cookie_shield_icon,

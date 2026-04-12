@@ -46,10 +46,11 @@ if button_select == 0{
 		}
 		
 	}
+	surface_set_target(card_surface)
 	//绘制右侧栏位
 	for(var i = 0 ; i < 7 ; i++){
-        for(var j = 0 ; j < 8 ; j++){
-            draw_sprite_ext(spr_package_slot_bg,0,x+196+i*84,y - 321 + 96 * j,1.8,1.8,0,c_white,1)
+        for(var j = 0 ; j < 20 ; j++){
+            draw_sprite_ext(spr_package_slot_bg,0,42+i*84,48+96 * j-y_offset,1.8,1.8,0,c_white,1)
         }
     }
 	//绘制所有已解锁防御卡
@@ -61,8 +62,8 @@ if button_select == 0{
 		var card_data = global.save_data.unlocked_cards[i]
 		var card_id = card_data.id
 		var card_slot_data = deck_get_card_data(card_id,card_data.shape)
-		var card_x = x+196+card_col*84
-		var card_y = y - 321 + 96 * card_row
+		var card_x = 42 + card_col*84
+		var card_y = 48+96 * card_row - y_offset
 		
 		draw_sprite_ext(spr_slot,0,card_x,card_y-3,0.25,0.25,0,c_white,1)
 		draw_sprite_ext(card_slot_data[? "sprite"],0,card_x,card_y+15,0.7,0.7,0,c_white,1)
@@ -78,14 +79,22 @@ if button_select == 0{
 		// 检查鼠标是否悬停在卡片上
         var spr_width = 84;
         var spr_height = 96;
+		
+		var hover_card_x = x + 196 + card_col*84
+		var hover_card_y = y - 321 + 96 * card_row - y_offset
+		
+		if mouse_y > y-321-48 && mouse_y < y + 450{
                 
-        if (point_in_rectangle(mouse_x, mouse_y, 
-                                card_x - spr_width/2, card_y - spr_height/2,
-                                card_x + spr_width/2, card_y + spr_height/2)) {
-            hover_card_index = card_index;
-        }
+	        if (point_in_rectangle(mouse_x, mouse_y, 
+	                                hover_card_x - spr_width/2, hover_card_y - spr_height/2,
+	                                hover_card_x + spr_width/2, hover_card_y + spr_height/2)) {
+	            hover_card_index = card_index;
+	        }
+		}
 		card_index++
 	}
+	surface_reset_target()
+	draw_surface(card_surface,x+196-42,y-321-48)
 	
 	//绘制悬停提示
 	if (hover_card_index != -1) {
@@ -276,11 +285,11 @@ else if button_select == 1{
             
 			// 获取提示文本
             
-            var tooltip_text = ""
+            var tooltip_text = weapon_data.name
             var is_equipped = is_weapon_equipped(weapon_id);
             
             var slot = get_weapon_slot(weapon_id);
-            tooltip_text = "点击将宝石放入强化槽"
+            tooltip_text += "\n点击将宝石放入强化槽"
             
 			
             // 绘制提示背景

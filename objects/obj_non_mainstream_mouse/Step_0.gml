@@ -23,9 +23,9 @@ if dance_cooldown > 0{
 	dance_cooldown --
 }
 
-if state = ENEMY_STATE.ACTING{
+if state == ENEMY_STATE.ACTING{
 	image_index = floor(timer/flash_speed) mod 20
-	if timer == 20*flash_speed - 1 || hp<=0{
+	if timer >= 20*flash_speed - 1 || hp<=0{
 		timer = 0
 		sprite_index = spr_non_mainstream_mouse
 		state = ENEMY_STATE.NORMAL

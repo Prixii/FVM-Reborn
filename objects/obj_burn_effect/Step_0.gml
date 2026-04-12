@@ -12,8 +12,8 @@ if timer mod 3 == 0 && not can_destroy{
 		image_index = floor(timer/5) mod 7 + 3
 	}
 	with obj_enemy_parent{
-		if (grid_col == other.grid_pos.col && grid_row == other.grid_pos.row){
-			if hp > 10{
+		if (grid_col == other.grid_pos.col && grid_row == other.grid_pos.row && can_hit(other.target_type,target_type)){
+			if hp > other.damage{
 				hp -= other.damage
 				event_user(0)
 			}

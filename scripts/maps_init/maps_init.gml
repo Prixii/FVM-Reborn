@@ -207,7 +207,8 @@ function maps_init(){
 					"boss_music":mus_volcanic_tower_boss,
 					"pre_level":"tower_cake_6_2",
 					"rewards":[
-						{"card_id":"chocolate_pult","target_shape":1}
+						{"card_id":"chocolate_pult","target_shape":1},
+						{"card_id":"mouse_clip","target_shape":1}
 					]
 				},
 				{
@@ -249,7 +250,8 @@ function maps_init(){
 					"boss_music":mus_volcanic_tower_boss,
 					"pre_level":"tower_cake_8_1",
 					"rewards":[
-						{"card_id":"brazier","target_shape":1}
+						{"card_id":"brazier","target_shape":1},
+						{"card_id":"coffee_grounds","target_shape":1}
 					]
 				},
 				{
@@ -280,6 +282,90 @@ function maps_init(){
 						{"card_id":"egg_boiler_pult","target_shape":1}
 					]
 				},
+				//{
+				//	"id":"tower_cake_10_1",
+				//	"name":"魔塔10层-先锋",
+				//	"level_file":"tower/tower-10-1.json",
+				//	"hard_level_file":"tower/tower-10-1_hard.json",
+				//	"level_sprite":spr_charcoal_jungle_tower,
+				//	"pre_music":mus_volcanic_tower_pre,
+				//	"elite_music":mus_volcanic_tower_elite,
+				//	"boss_music":mus_volcanic_tower_boss,
+				//	"pre_level":"tower_cake_9_2",
+				//	"rewards":[
+				//		{"card_id":"firework_dragon","target_shape":1}
+				//	]
+				//},
+				//{
+				//	"id":"tower_cake_10_2",
+				//	"name":"魔塔10层-精英",
+				//	"level_file":"tower/tower-10-2.json",
+				//	"hard_level_file":"tower/tower-10-2_hard.json",
+				//	"level_sprite":spr_charcoal_jungle_tower,
+				//	"pre_music":mus_volcanic_tower_pre,
+				//	"elite_music":mus_volcanic_tower_elite,
+				//	"boss_music":mus_volcanic_tower_boss,
+				//	"pre_level":"tower_cake_10_1",
+				//	"rewards":[
+				//		{"card_id":"hamburger","target_shape":1}
+				//	]
+				//},
+				//{
+				//	"id":"tower_cake_11_1",
+				//	"name":"魔塔11层-先锋",
+				//	"level_file":"tower/tower-11-1.json",
+				//	"hard_level_file":"tower/tower-11-1_hard.json",
+				//	"level_sprite":spr_matcha_manor_daytime,
+				//	"pre_music":mus_volcanic_tower_pre,
+				//	"elite_music":mus_volcanic_tower_elite,
+				//	"boss_music":mus_volcanic_tower_boss,
+				//	"pre_level":"tower_cake_10_2",
+				//	"rewards":[
+				//		{"card_id":"hotdog_cannon","target_shape":1}
+				//	]
+				//},
+				//{
+				//	"id":"tower_cake_11_2",
+				//	"name":"魔塔11层-精英",
+				//	"level_file":"tower/tower-11-2.json",
+				//	"hard_level_file":"tower/tower-11-2_hard.json",
+				//	"level_sprite":spr_matcha_manor_daytime,
+				//	"pre_music":mus_volcanic_tower_pre,
+				//	"elite_music":mus_volcanic_tower_elite,
+				//	"boss_music":mus_volcanic_tower_boss,
+				//	"pre_level":"tower_cake_11_1",
+				//	"rewards":[
+				//		{"card_id":"tar_sprayer","target_shape":1}
+				//	]
+				//},
+				//{
+				//	"id":"tower_cake_12_1",
+				//	"name":"魔塔12层-先锋",
+				//	"level_file":"tower/tower-12-1.json",
+				//	"hard_level_file":"tower/tower-12-1_hard.json",
+				//	"level_sprite":spr_macchiato_port,
+				//	"pre_music":mus_volcanic_tower_pre,
+				//	"elite_music":mus_volcanic_tower_elite,
+				//	"boss_music":mus_volcanic_tower_boss,
+				//	"pre_level":"tower_cake_11_2",
+				//	"rewards":[
+				//		{"card_id":"oden_pot","target_shape":1}
+				//	]
+				//},
+				//{
+				//	"id":"tower_cake_12_2",
+				//	"name":"魔塔12层-精英",
+				//	"level_file":"tower/tower-12-2.json",
+				//	"hard_level_file":"tower/tower-12-2_hard.json",
+				//	"level_sprite":spr_macchiato_port,
+				//	"pre_music":mus_volcanic_tower_pre,
+				//	"elite_music":mus_volcanic_tower_elite,
+				//	"boss_music":mus_volcanic_tower_boss,
+				//	"pre_level":"tower_cake_12_1",
+				//	"rewards":[
+				//		{"card_id":"cotton_candy","target_shape":1}
+				//	]
+				//},
 			]
 		}
 	)
@@ -457,7 +543,7 @@ function maps_init(){
 					"button_index":9,
 					"button_x":957,
 					"button_y":330,
-					"level_file":"volcanic/macchiato_post.json",
+					"level_file":"volcanic/macchiato_port.json",
 					"hard_level_file":"volcanic/macchiato_port_hard.json",
 					"level_sprite":spr_macchiato_port,
 					"pre_music":mus_volcanic_island_crown_pre,

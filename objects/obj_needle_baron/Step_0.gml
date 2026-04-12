@@ -105,7 +105,7 @@ switch state{
 		if timer == 1{
 			ds_list_clear(avaliable_pos)
 			for(var i = 0 ; i < global.grid_rows-1;i++){
-				for(var j = 0 ; j < global.grid_cols-1;j++){
+				for(var j = 2; j < global.grid_cols-1;j++){
 					var plant_list = ds_grid_get(global.grid_plants,j,i)
 					if ds_list_size(plant_list) > 0{
 						ds_list_add(avaliable_pos,{"col":j,"row":i})
