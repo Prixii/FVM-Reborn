@@ -1,14 +1,24 @@
 /// 
 function Stove_StageManager() constructor {
     self._stage_metadatas = {} // use struct instead of map to enable auto gc
+    self._stage_datas = {} // use struct instead of map to enable auto gc
 
     self.util = new Stove_StageManagerUtils()
     self.factory = new Stove_StageManagerFactory()
     
     /// @param {Struct.Stove_StageMetadata} _metadata 
     static _add_stage_metadata = function(_stage_metadata) {
-        // 动态字符串键必须用 variable_struct_set；方括号访问会把键当数组下标并尝试 int64
         variable_struct_set(self._stage_metadatas, string(_stage_metadata.id), _stage_metadata)
+    }
+
+    /// @returns {Struct.Stove_StageMetadata} 
+    static get_stage_metadata = function(_stage_id) {
+        return variable_struct_get(self._stage_metadatas, string(_stage_id))
+    }
+
+    /// @returns {Struct.Stove_StageData}
+    static get_stage_data = function(_stage_id) {
+        return variable_struct_get(self._stage_datas, string(_stage_id))
     }
 
     /// @returns {Struct.Result} 
@@ -36,12 +46,14 @@ function Stove_StageManager() constructor {
         var _ids = variable_struct_get_names(self._stage_metadatas)
         self.util.sort_string_ids_asc(_ids)
         var _n = array_length(_ids)
-        var _levels_data = []
+        var stage_data_list = []
         for (var _i = 0; _i < _n; _i++) {
             var _id = _ids[_i]
             var _meta = variable_struct_get(self._stage_metadatas, _id)
             self.factory.load_stage_metadata_assets(_meta)
-            array_push(_levels_data, self.util.level_entry_from_stage_metadata(_meta, _i))
+            var _data = self.util.level_entry_from_stage_metadata(_meta, _i)
+            array_push(stage_data_list, _data)
+            variable_struct_set(self._stage_datas, _id, _data)
         }
 
         if (_n == 0) {
@@ -52,23 +64,22 @@ function Stove_StageManager() constructor {
         var _map_data = {
             map_name: "Mod 关卡",
             map_sprite: spr_tower_cake_bg,
-            levels_data: _levels_data
+            levels_data: stage_data_list
         }
         register_or_replace_map("stove_mod", _map_data)
         _logger.log_d("register_mod_stages: registered map 'stove_mod' with " + string(_n) + " level(s) into global.maps_map")
         return new Result().success()
     }
 
-    /// @returns {Array<String>} 已注册关卡 id 升序（与 register_mod_stages 中 levels_data 顺序一致）
+    /// @returns {Array<String>}
     static get_registered_stage_ids_sorted = function() {
         var _ids = variable_struct_get_names(self._stage_metadatas)
         self.util.sort_string_ids_asc(_ids)
         return _ids
     }
 
-    /// 仅处理 self._stage_metadatas 中的关卡：写入 global.level_data / global.level_id / global.level_file，供 room_ready 后开战。
     /// @param {String} _stage_id 
-    /// @param {Real} [_button_index] 与 level_entry_from_stage_metadata 中按钮布局一致，默认 0
+    /// @param {Real} [_button_index] 
     /// @returns {Struct.Result} 
     static prepare_playable_level_from_registered_stage = function(_stage_id, _button_index = 0) {
         var _sid = string(_stage_id)

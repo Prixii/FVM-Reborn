@@ -68,7 +68,6 @@ function RegisterCard()
 end
 
 function RegisterStage()
-    -- gmlAsset 使用 stove_asset_manager.lua 中的 GML 资源名字符串（内嵌 Lua 不支持 0x 字面量）
     --- @class (partial) StoveAsset
     local preMusic = {
         ["source"] = StoveAssetManager.AssetSource.IN_GAME,
@@ -87,7 +86,7 @@ function RegisterStage()
     --- @class (partial) StoveAsset
     local background = {
         ["source"] = StoveAssetManager.AssetSource.IN_GAME,
-        ["gmlAsset"] = StoveAssetManager.OriginalSprite.PUDDING_ISLAND_NIGHT
+        ["gmlAsset"] = StoveAssetManager.OriginalSprite.COOKIE_ISLAND
     }
     --- @class (partial) StageMetaData
     local stageMetaData = {
@@ -98,10 +97,30 @@ function RegisterStage()
         ["bossMusic"] = bossMusic,
         ["background"] = background,
         ["author"] = "Wis'adel",
-        ["jsonPath"] = "tower-9-2_hard.json"
+        ["jsonPath"] = "tower-9-2_hard.json",
+        ["jsonPathHard"] = "tower-9-2_hard.json"
+    }
+
+    --- @class (partial) StoveAsset
+    local background2 = {
+        ["source"] = StoveAssetManager.AssetSource.IN_GAME,
+        ["gmlAsset"] = StoveAssetManager.OriginalSprite.MOUSSE_ISLAND
+    }
+
+    local stageMetaData2 = {
+        ["name"] = "test_stageer",
+        ["description"] = "test stage",
+        ["preMusic"] = preMusic,
+        ["eliteMusic"] = eliteMusic,
+        ["bossMusic"] = bossMusic,
+        ["background"] = background2,
+        ["author"] = "Wis'adel",
+        ["jsonPath"] = "tower-9-2_harder.json",
+        ["jsonPathHard"] = "tower-9-2_harder.json"
     }
 
     Stove.RegisterModStage(stageMetaData)
+    Stove.RegisterModStage(stageMetaData2)
 end
 
 function AmiyaMain()

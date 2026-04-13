@@ -76,11 +76,11 @@ function Stove_ModManager() constructor {
         return new Result().success()
     }
 
+    /// 绑定全局依赖；Lua 须已由 Stove_Engine.init() 或 lua_manager.init() 初始化。
     static init = function() {
         self.lua_manager = global.stove.lua_manager
         self.file_utils = global.stove.file_utils
         self.logger = global.stove.logger
-        self.lua_manager.init()
     }
 
     /// @param {String} _mod_parent_folder 

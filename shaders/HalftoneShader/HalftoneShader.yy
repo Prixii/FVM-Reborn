@@ -1,0 +1,12 @@
+{
+  "$GMShader":"",
+  "%Name":"HalftoneShader",
+  "name":"HalftoneShader",
+  "parent":{
+    "name":"Shaders",
+    "path":"folders/ModSupport/Stove_GUI/Components/Shaders.yy",
+  },
+  "resourceType":"GMShader",
+  "resourceVersion":"2.0",
+  "type":1,
+}

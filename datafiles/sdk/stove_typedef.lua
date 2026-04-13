@@ -99,4 +99,5 @@ local _asset = {}
 ---@field background StoveAsset 背景
 ---@field author string 作者
 ---@field jsonPath string JSON 资源路径
+---@field jsonPathHard string 困难地图 JSON 资源路径
 local _stageMetaData = {}

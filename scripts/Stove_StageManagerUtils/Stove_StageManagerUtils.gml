@@ -25,7 +25,7 @@ function Stove_StageManagerUtils() constructor {
     /// @returns {Struct.Stove_StageData}  One entry compatible with global.maps_map levels_data (see maps_init)
     static level_entry_from_stage_metadata = function(_meta, _button_index) {
         var lf = string_replace_all(string(_meta.json_path), "\\", "/")
-        var hf = lf
+        var hf = string_replace_all(string(_meta.json_path_hard), "\\", "/")
         var spr_ix = asset_to_game_index(_meta.background)
         if (spr_ix == -1) {
             spr_ix = spr_cookie_island

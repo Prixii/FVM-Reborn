@@ -42,20 +42,21 @@ if (global.stove.engine.test_mode) {
 } else {
 	global.stove.engine.init();
 	var _mod_manager = global.stove.mod_manager
-    var _logger = global.stove.logger
+	_mod_manager.init()
+	var _logger = global.stove.logger
 	var _stage_manager = global.stove.stage_manager
-    var _register_result = _mod_manager.register_all_mods("mods/")
-    if (_register_result.is_failed()) {
-        _logger.log_e(_register_result.get_error_stack())
-    }
-    var _load_result = _mod_manager.load_all_mods()
-    if (_load_result.is_failed()) {
-        _logger.log_e(_load_result.get_error_stack())
-    }
-    var _run_result = _mod_manager.run_all_mods()
-    if (_run_result.is_failed()) {
-        _logger.log_e(_run_result.get_error_stack())
-    }
+	var _register_result = _mod_manager.register_all_mods("mods/")
+	if (_register_result.is_failed()) {
+		_logger.log_e(_register_result.get_error_stack())
+	}
+	var _load_result = _mod_manager.load_all_mods()
+	if (_load_result.is_failed()) {
+		_logger.log_e(_load_result.get_error_stack())
+	}
+	var _run_result = _mod_manager.run_all_mods()
+	if (_run_result.is_failed()) {
+		_logger.log_e(_run_result.get_error_stack())
+	}
 	_stage_manager.register_mod_stages()
 
 }

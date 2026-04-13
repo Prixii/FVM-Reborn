@@ -56,7 +56,7 @@ function Stove_LuaManager() constructor {
                 return _load_result
             }
         }
-        
+        return new Result().success()
     }
 
     /// @param {String} _path 

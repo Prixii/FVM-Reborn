@@ -126,20 +126,19 @@ function Stove_StageManagerFactory() constructor {
         stage_metadata.background = _normalize_stage_asset(food_lua_plain_get(_lua_table, "background"))
         var _auth = food_lua_plain_get(_lua_table, "author")
         stage_metadata.author = _auth == undefined ? "" : string(_auth)
-        var _jp_raw = food_lua_plain_get(_lua_table, "jsonPath")
-        if (_jp_raw == undefined) {
-            stage_metadata.json_path = ""
+        var _json_path_raw = food_lua_plain_get(_lua_table, "jsonPath")
+        var _json_path_hard_raw = food_lua_plain_get(_lua_table, "jsonPathHard")
+        var _mod_root = ""
+        var _mm = global.stove.mod_manager
+        if (!is_undefined(_mm) && is_string(_mm._active_mod_folder)) {
+            _mod_root = _mm._active_mod_folder
+        }
+        if (_mod_root != "") {
+            stage_metadata.json_path = _resolve_stage_json_path(_mod_root, string(_json_path_raw))
+            stage_metadata.json_path_hard = _resolve_stage_json_path(_mod_root, string(_json_path_hard_raw))
         } else {
-            var _mod_root = ""
-            var _mm = global.stove.mod_manager
-            if (!is_undefined(_mm) && is_string(_mm._active_mod_folder)) {
-                _mod_root = _mm._active_mod_folder
-            }
-            if (_mod_root != "") {
-                stage_metadata.json_path = _resolve_stage_json_path(_mod_root, string(_jp_raw))
-            } else {
-                stage_metadata.json_path = string(_jp_raw)
-            }
+            stage_metadata.json_path = string(_json_path_raw)
+            stage_metadata.json_path_hard = string(_json_path_hard_raw)
         }
 
         if (!_is_metadata_valid(stage_metadata)) {
